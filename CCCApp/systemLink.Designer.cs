@@ -94,10 +94,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Haettenschweiler", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 28);
+            this.label1.Size = new System.Drawing.Size(163, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "IBK SYSTEMS";
             // 
@@ -280,10 +280,10 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Haettenschweiler", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(238, 23);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 28);
+            this.label17.Size = new System.Drawing.Size(153, 24);
             this.label17.TabIndex = 16;
             this.label17.Text = "GENERALIST ";
             // 
@@ -365,10 +365,10 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Haettenschweiler", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(416, 23);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(69, 28);
+            this.label23.Size = new System.Drawing.Size(92, 24);
             this.label23.TabIndex = 26;
             this.label23.Text = "REFLEX";
             // 
@@ -451,10 +451,10 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Haettenschweiler", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(585, 23);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(71, 28);
+            this.label30.Size = new System.Drawing.Size(99, 24);
             this.label30.TabIndex = 36;
             this.label30.Text = "OTHERS";
             // 

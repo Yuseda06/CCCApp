@@ -332,6 +332,8 @@
     <None Include="Resources\link-3-20 blue.png" />
     <None Include="Resources\link-3-20.png" />
     <None Include="Resources\trophy-2-20.png" />
+    <None Include="Resources\Picture21.png" />
+    <None Include="Resources\Picture22.png" />
     <Content Include="Resources\view-details-20 blue.png" />
     <None Include="Resources\view-details-20 blue1.png" />
     <Content Include="xsell_eM2_icon.ico" />
