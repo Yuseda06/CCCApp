@@ -28,10 +28,10 @@ namespace CCCApp
 
         int intStaffID;
         string StaffID;
-        
+
         void checkingID()
         {
-            int j = 1;
+            int j = 0;
             if (j == 1)
             {
                 try
@@ -120,6 +120,22 @@ namespace CCCApp
             labelCSA[8] = lblCSA9;
             labelCSA[9] = lblCSA10;
 
+            try
+            {
+                MMM = DateTime.Now.ToString("MMM").Replace('-', '/');
+          
+
+            }
+            catch (Exception)
+            {
+
+                MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+            }
+
+            //if (StaffID == null)
+            //{
+            //    MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+            //}
         }
 
         int x = 0;
@@ -129,15 +145,16 @@ namespace CCCApp
         static string tm;
         static string uh;
         string staffID;
+        string MMM;
 
         private void setDate()
         {
             //DateTime moment = new DateTime();
             //int months = moment.Month;
             //int years = moment.Year;
-           
+
             //lblMonth.Text = months + ", " + years;
-            lblMonth.Text = DateTime.Now.ToString("MMMM  yyyy").Replace('-', '/') + " , Cross Selling Champions";
+            lblMonth.Text = DateTime.Now.ToString("MMM  yyyy").Replace('-', '/') + ", Cross Selling Champs";
 
         }
 
@@ -170,10 +187,10 @@ namespace CCCApp
 
 
                     for (int i = 0; i < 10; i++)
+                    {
+
+                        while (reader.Read())
                         {
-                        
-                            while (reader.Read())
-                            {
 
                             try
                             {
@@ -188,9 +205,9 @@ namespace CCCApp
                                 staffID = reader["STAFF_ID"].ToString();
                             }
 
-                         
 
-    here:
+
+                            here:
                             labelCSA[i].Text = staffID;
                             Console.WriteLine(staffID);
 
@@ -198,15 +215,15 @@ namespace CCCApp
 
                             //Console.WriteLine(labelCSA[i].Text);
                             labels[i].Text = reader["TOTAL"].ToString();
-                               //Console.WriteLine(labels[i].Text);
+                            //Console.WriteLine(labels[i].Text);
 
-                                x = Convert.ToInt32(labels[i].Text) * 2;
-                                buttons[i].Size = new Size(30 + x, 5);
-                                x = 0;
+                            x = Convert.ToInt32(labels[i].Text) * 2;
+                            buttons[i].Size = new Size(30 + x, 5);
+                            x = 0;
                             break;
-                            }
-
                         }
+
+                    }
 
                     OleDbCommand command1 = new OleDbCommand("SELECT  * FROM TM WHERE DATES = " + date3 + " ORDER BY TOTAL DESC", connection);
                     OleDbDataReader reader1 = command1.ExecuteReader();
@@ -227,7 +244,7 @@ namespace CCCApp
                             {
                                 lblTM[i].Text = TM;
                             }
-                            
+
                             Console.WriteLine(labelCSA[i].Text);
                             lblScoreTM[i].Text = reader1["TOTAL"].ToString();
                             Console.WriteLine(labels[i].Text);
@@ -263,7 +280,7 @@ namespace CCCApp
                             {
                                 lblUH[i].Text = UH;
                             }
-                           
+
                             Console.WriteLine(labelCSA[i].Text);
                             lblScoreUH[i].Text = reader2["TOTAL"].ToString();
                             Console.WriteLine(labels[i].Text);
@@ -274,7 +291,7 @@ namespace CCCApp
 
                             break;
                         }
-                       
+
                     }
 
                     reader.Close();
@@ -285,15 +302,15 @@ namespace CCCApp
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                  
+
                 }
                 connection.Close();
-               
+
             }
         }
-     
+
         int o;
-        
+
         private void pressEnter1()
         {
             using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
@@ -304,20 +321,20 @@ namespace CCCApp
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
                     o = 0;
-                   // Staff = Environment.UserName.ToString();
-                   // string Staff = "403066";
+                    // Staff = Environment.UserName.ToString();
+                    // string Staff = "403066";
 
                     connection.Open();
                     OleDbCommand command = new OleDbCommand("SELECT * FROM CSAS WHERE DATES = " + date3 + "  ORDER BY TOTAL DESC", connection);
                     OleDbDataReader reader = command.ExecuteReader();
 
-                    
+
 
 
                     while (reader.Read())
                     {
                         o++;
-                      
+
                         Console.WriteLine(reader["STAFF_ID"].ToString());
                         if (reader["STAFF_ID"].ToString() == StaffID)
                         {
@@ -328,12 +345,12 @@ namespace CCCApp
 
 
                             goto final;
-                        //MessageBox.Show(reader["TOTAL"].ToString());
+                            //MessageBox.Show(reader["TOTAL"].ToString());
                         }
-                        
+
                     }
 
-                    
+
                     reader.Close();
 
                     OleDbCommand command1 = new OleDbCommand("SELECT * FROM TM WHERE DATES = " + date3 + "  ORDER BY TOTAL DESC", connection);
@@ -345,7 +362,7 @@ namespace CCCApp
                         Console.WriteLine(reader1["STAFF_ID"].ToString());
                         if (reader1["STAFF_ID"].ToString() == StaffID)
                         {
-                            
+
                             lblCurrentScore.Text = o.ToString();
                             lblCurrentScore.Text = "" + reader1["TM_NAME"].ToString() + " You are currently at TOP ( " + lblCurrentScore.Text + " ) with total scores of ( " + reader1["TOTAL"].ToString() + " )";
 
@@ -367,7 +384,7 @@ namespace CCCApp
                         Console.WriteLine(reader2["STAFF_ID"].ToString());
                         if (reader2["STAFF_ID"].ToString() == StaffID)
                         {
-                           
+
                             lblCurrentScore.Text = o.ToString();
                             lblCurrentScore.Text = "" + reader2["UH_NAME"].ToString() + " You are currently at TOP ( " + lblCurrentScore.Text + " ) with total scores of ( " + reader2["TOTAL"].ToString() + " )";
 
@@ -387,9 +404,9 @@ namespace CCCApp
                     Console.WriteLine(ex.Message);
                     //MessageBox.Show("Error" + ex.Message);
                 }
- final:               
+                final:
                 connection.Close();
-                
+
 
             }
         }
@@ -410,25 +427,26 @@ namespace CCCApp
                     DateTime now = DateTime.Now;
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
-                   
+
                     //int Staff = Convert.ToInt32(Environment.UserName);
-                    
-                    OleDbCommand command = new OleDbCommand("SELECT `May$`.WFM FROM `May$` `May$` WHERE(`May$`.`Staff ID`= " + staffID + ")   ", connection);
+
+                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
-//`Staff ID` = '" + Staff + "'
+                    //`Staff ID` = '" + Staff + "'
                     while (reader.Read())
                     {
                         if (reader["WFM"].ToString() == null)
                         {
                             return staffID.ToString();
 
-                        } else
+                        }
+                        else
                         {
                             return reader["WFM"].ToString();
-                           
+
                         }
-                                                 
+
 
                     }
 
@@ -442,7 +460,7 @@ namespace CCCApp
                 }
 
                 connection.Close();
-              
+
                 return null;
             }
         }
@@ -457,7 +475,6 @@ namespace CCCApp
 }
 
 
-    
 
 
 
@@ -471,25 +488,26 @@ namespace CCCApp
 
 
 
-        //private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    MessageBox.Show("testing");
-        //}
+
+//private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+//{
+//    MessageBox.Show("testing");
+//}
 
 
-       
-        
-        
-        //private void pressEnter(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyCode == Keys.Enter)
-        //    {
 
 
-        //        String name = txtName.Text.ToString();
+
+//private void pressEnter(object sender, KeyEventArgs e)
+//{
+//    if (e.KeyCode == Keys.Enter)
+//    {
 
 
-//                String szFilePath = "C:\\Users\\Yusri\\Desktop\\XSell_BTCX_MAY2018_v1.xls";
+//        String name = txtName.Text.ToString();
+
+
+//                String szFilePath = "C:\\Users\\Yusri\\Desktop\\XSell_BTCX_" + MMM + "2018_v1.xls";
 
 //                String ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source = '" + szFilePath + "';Extended Properties=\"Excel 8.0;HDR=YES;\"";
 

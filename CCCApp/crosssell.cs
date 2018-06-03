@@ -16,10 +16,10 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 namespace CCCApp
 {
     public delegate void passingName(string name);
-   
+
     public partial class crosssell : UserControl
- 
-      
+
+
     {
         private static TextBox _instance;
         string StaffID;
@@ -27,10 +27,11 @@ namespace CCCApp
         int pointTM;
         int pointUH;
         int intStaffID;
+        string MMM;
 
         void checkingID()
         {
-            int j = 1;
+            int j = 0;
             if (j == 1)
             {
                 try
@@ -45,21 +46,36 @@ namespace CCCApp
 
 
                 StaffID = Environment.UserName.ToString();
-                
-            } else
+
+            }
+            else
             {
                 intStaffID = 400584;
                 StaffID = "400584";
             }
         }
 
-            public crosssell()
+        public crosssell()
         {
             InitializeComponent();
             checkingID();
             picRHB.BackgroundImage = null;
             picESTMT.BackgroundImage = null;
-            //criteria1.Visible = false;
+            try
+            {
+                MMM = DateTime.Now.ToString("MMM").Replace('-', '/');
+           
+
+            }
+            catch (Exception)
+            {
+                MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+
+            }
+            //if (StaffID == null)
+            //{
+            //    MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+            //}
 
         }
         string secondLegalID;
@@ -107,7 +123,8 @@ namespace CCCApp
             if (interested == "Yes")
             {
                 status = " is interested in ";
-            } else
+            }
+            else
             {
                 status = " rejected the offer of ";
             }
@@ -127,8 +144,8 @@ namespace CCCApp
             Outlook.Application app = new Outlook.Application();
             Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
             mailItem.Subject = subject;
-            mailItem.To = "CCC Sales Support";
-            //mailItem.To = "179264";
+            //mailItem.To = "CCC Sales Support";
+            mailItem.To = "179264";
             crosssell cro = new crosssell();
 
             mailItem.Body = body;
@@ -136,7 +153,7 @@ namespace CCCApp
             //mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
             mailItem.Send();
 
-            
+
         }
 
 
@@ -190,12 +207,12 @@ namespace CCCApp
         }
 
 
-        public  void ProductSelected()
+        public void ProductSelected()
         {
 
             interested = "";
             product = "";
-            
+
             if (cbBTYes.Checked)
             {
                 interestBT = "Yes";
@@ -205,7 +222,7 @@ namespace CCCApp
             else if (cbBTNo.Checked)
             {
                 interestBT = "No";
-                
+
             }
 
             if (cbCXYes.Checked)
@@ -216,7 +233,7 @@ namespace CCCApp
             else if (cbCXNo.Checked)
             {
                 interestCX = "No";
-                
+
             }
 
             if (interestBT == "Yes" || interestCX == "Yes")
@@ -227,20 +244,21 @@ namespace CCCApp
             {
                 interested = "No";
             }
-                
+
 
             if (cbBTYes.Checked && cbCXYes.Checked)
             {
                 interested = "Yes";
                 product = "BTCX";
-            } else if (cbBTNo.Checked && cbCXNo.Checked)
-            
+            }
+            else if (cbBTNo.Checked && cbCXNo.Checked)
+
             {
                 interested = "No";
                 product = "BTCX";
             }
 
-            
+
         }
 
         public void sendValueToCal()
@@ -259,10 +277,10 @@ namespace CCCApp
                     DateTime now = DateTime.Now;
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
-                    
+
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `May$`.WFM FROM `May$` `May$` WHERE(`May$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -291,7 +309,7 @@ namespace CCCApp
                 }
 
                 connection.Close();
-                
+
                 return null;
             }
         }
@@ -299,16 +317,17 @@ namespace CCCApp
         bool checks;
         private void checkingCriteria(object sender, EventArgs e)
         {
-            
 
-            if(txtAvailable.Text == "" && (cbBTYes.Checked == true || cbCXYes.Checked == true))
+
+            if (txtAvailable.Text == "" && (cbBTYes.Checked == true || cbCXYes.Checked == true))
             {
                 timer1.Stop();
                 text = "Please check customer available balance before press submit!";
                 max = 10;
                 timer1.Start();
 
-            }  else
+            }
+            else
             {
                 if (txtName.Text != "" && (cbBTYes.Checked || cbCXYes.Checked))
                 {
@@ -339,7 +358,7 @@ namespace CCCApp
                     if (staffID1 != null && testing == "checked")
                     {
                         insertDataMDB();
-                        
+
                     }
                     secondLegalID = legalID;
                     resetItems();
@@ -355,19 +374,19 @@ namespace CCCApp
                     timer1.Start();
                 }
             }
-           
+
 
         }
 
         void resetItems()
         {
-            product ="";
-            source="";
+            product = "";
+            source = "";
             //legalID="";
-            rhb="";
-            estate="";
-            cust="";
-            status="";
+            rhb = "";
+            estate = "";
+            cust = "";
+            status = "";
             cbBTNo.Checked = false;
             cbBTYes.Checked = false;
             cbCXNo.Checked = false;
@@ -384,7 +403,7 @@ namespace CCCApp
             lblBTScript.Text = "";
             lblCXScript.Text = "";
             interestBT = "";
-            interestCX="";
+            interestCX = "";
             interested = "";
             max = 0;
 
@@ -470,7 +489,7 @@ namespace CCCApp
 
         private void insertDataMDB()
         {
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCXData.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCXData.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
 
@@ -481,13 +500,13 @@ namespace CCCApp
 
 
 
-                    if (done != txtLegalID.Text || carddone != txtCardNo.Text || cbBTNo.Checked == true || cbBTYes.Checked == true || cbCXNo.Checked == true || cbCXYes.Checked == true )
+                    if (done != txtLegalID.Text || carddone != txtCardNo.Text || cbBTNo.Checked == true || cbBTYes.Checked == true || cbCXNo.Checked == true || cbCXYes.Checked == true)
                     {
 
                         //MessageBox.Show(userID);
                         DateTime date1 = DateTime.Now;
                         source = Source().ToString();
-                        
+
                         if (txtAvailable.Text != "")
                         {
                             balance = Convert.ToDouble(txtAvailable.Text);
@@ -495,7 +514,7 @@ namespace CCCApp
 
                         if (cbBTNo.Checked == true || cbBTYes.Checked == true || cbCXNo.Checked == true || cbCXYes.Checked == true)
                         {
-                            
+
                             status = "cross selling";
                         }
                         else
@@ -503,11 +522,11 @@ namespace CCCApp
                             status = "checked";
                         }
 
-                        if(cbBTYes.Checked == true || cbCXYes.Checked == true)
+                        if (cbBTYes.Checked == true || cbCXYes.Checked == true)
                         {
                             insertDataCSA();
                         }
-                        
+
 
                         String my_querry = "INSERT INTO XSell (CUSTOMER, LEGAL_ID, CARD_NO, STAFF_ID, DATE1, PRODUCT, INTEREST, REMARKS, SOURCE, RHBNOW, ESTATEMENT, BALANCE, STATUS )VALUES('" + txtName.Text + "','" + legalID + "','" + txtCardNo.Text + "','" + StaffID + "' ,'" + date1 + "','" + product + "','" + interested + "','" + txtCriteriaRemarks.Text + "','" + source + "','" + rhb + "','" + estate + "','" + balance + "','" + status + "')";
 
@@ -531,13 +550,13 @@ namespace CCCApp
         int totalPoints;
         string date2;
         int date3;
-        
+
         private void insertDataCSA()
         {
 
             using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
-                
-            try
+
+                try
                 {
 
                     DateTime now = DateTime.Now;
@@ -551,20 +570,20 @@ namespace CCCApp
                     date3 = Convert.ToInt32(date2);
                     while (reader.Read())
                     {
-                        
+
                         //MessageBox.Show(reader["TOTAL"].ToString());
-                            if (Convert.ToInt32(reader["DATES"]) == date3)
-                            {
-                                string totalPoint = reader["TOTAL"].ToString();
-                                totalPoints = Convert.ToInt32(totalPoint);
-                                connection.Close();
-                                goto here;
+                        if (Convert.ToInt32(reader["DATES"]) == date3)
+                        {
+                            string totalPoint = reader["TOTAL"].ToString();
+                            totalPoints = Convert.ToInt32(totalPoint);
+                            connection.Close();
+                            goto here;
 
-                            }
+                        }
 
-                            //MessageBox.Show("foundid" + " " + totalPoints + "");
+                        //MessageBox.Show("foundid" + " " + totalPoints + "");
 
-                        
+
 
                     }
 
@@ -587,20 +606,20 @@ namespace CCCApp
 
                 }
 
-              
+
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error this" + ex.Message);
                 }
 
 
-            finally
-            {
+                finally
+                {
 
-                connection.Close();
-            }
-           
-            here:  
+                    connection.Close();
+                }
+
+            here:
             using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
@@ -609,27 +628,27 @@ namespace CCCApp
                 {
                     connection.Open();
 
-                    totalPoints ++;
+                    totalPoints++;
                     //MessageBox.Show(totalPoints.ToString());
 
                     string my_querry = "UPDATE CSAS SET TOTAL ='" + totalPoints + "' WHERE STAFF_ID = '" + StaffID + "' AND DATES=  " + date3 + " ";
 
                     // totalPoints = 0;
                     OleDbCommand cmd = new OleDbCommand(my_querry, connection);
-                        cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    
+
                     string TM = agentListTM(intStaffID);
                     Console.WriteLine(TM);
                     string UH = agentListUH(intStaffID);
                     Console.WriteLine(UH);
 
-                     
+
                     OleDbCommand command = new OleDbCommand("SELECT * FROM TM  WHERE TM_NAME = '" + TM + "'", connection);
                     //  OleDbCommand command = new OleDbCommand("SELECT  STAFF_ID FROM CSAS WHERE(STAFF_ID = '179264') ", connection);
                     //OleDbCommand command = new OleDbCommand("SELECT  XSell.FINAL_ID,XSell.IBK_CUST,XSell.ESTMT_CUST,XSell.CARD_NUMBER,XSell.CIS_SEGMENT, XSell.NAME_FULL FROM `\\\\B720W999\\BTCX\\BTCX`.XSell XSell WHERE(XSell.FINAL_ID = '" + legalID + "') ", connection);
                     //connection.Open();
-                    
+
                     OleDbDataReader reader = command.ExecuteReader();
                     date3 = Convert.ToInt32(date2);
                     while (reader.Read())
@@ -644,7 +663,7 @@ namespace CCCApp
                     //  OleDbCommand command = new OleDbCommand("SELECT  STAFF_ID FROM CSAS WHERE(STAFF_ID = '179264') ", connection);
                     //OleDbCommand command = new OleDbCommand("SELECT  XSell.FINAL_ID,XSell.IBK_CUST,XSell.ESTMT_CUST,XSell.CARD_NUMBER,XSell.CIS_SEGMENT, XSell.NAME_FULL FROM `\\\\B720W999\\BTCX\\BTCX`.XSell XSell WHERE(XSell.FINAL_ID = '" + legalID + "') ", connection);
                     //connection.Open();
-                    
+
                     OleDbDataReader reader1 = command1.ExecuteReader();
                     date3 = Convert.ToInt32(date2);
                     while (reader1.Read())
@@ -658,12 +677,12 @@ namespace CCCApp
 
 
 
-                     my_querry = "UPDATE TM SET TOTAL = " + pointTM + " WHERE TM_NAME = '" + TM + "' AND DATES=  " + date3 + " ";
+                    my_querry = "UPDATE TM SET TOTAL = " + pointTM + ", DATES =  " + date3 + "   WHERE TM_NAME = '" + TM + "' ";
                     // totalPoints = 0;
                     OleDbCommand cmd1 = new OleDbCommand(my_querry, connection);
                     cmd1.ExecuteNonQuery();
 
-                    my_querry = "UPDATE UH SET TOTAL = " + pointUH + " WHERE UH_NAME = '" + UH + "' AND DATES=  " + date3 + " ";
+                    my_querry = "UPDATE UH SET TOTAL = " + pointUH + ", DATES=  " + date3 + " WHERE UH_NAME = '" + UH + "'  ";
                     // totalPoints = 0;
                     OleDbCommand cmd2 = new OleDbCommand(my_querry, connection);
                     cmd2.ExecuteNonQuery();
@@ -688,10 +707,10 @@ namespace CCCApp
                     DateTime now = DateTime.Now;
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
-       
+
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT * FROM `May$` `May$` WHERE(`May$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -720,7 +739,7 @@ namespace CCCApp
                 }
 
                 connection.Close();
-             
+
                 return null;
             }
         }
@@ -737,7 +756,7 @@ namespace CCCApp
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT * FROM `May$` `May$` WHERE(`May$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -789,7 +808,7 @@ namespace CCCApp
                 //criteria1.BringToFront();
             }
         }
-        
+
         private void searchingData_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -853,7 +872,7 @@ namespace CCCApp
                                 max = 20;
                                 timer1.Start();
 
-                                
+
                             }
                         }
 
@@ -861,26 +880,26 @@ namespace CCCApp
 
                         if (txtCardNo.Text == "")
                         {
-                            
+
                             text = "The Legal ID does not exist, even so please do the cross selling!";
                             txtName.Text = "Potential Customer";
                             max = 10;
                             timer1.Start();
-                            
+
                         }
 
 
 
                         //insert customer in the database
-              
+
                         //int staffID = 450011;
                         string staffID1 = agentList(intStaffID);
-                        if (staffID1 != null )
+                        if (staffID1 != null)
                         {
                             insertDataMDB();
                             checks = true;
                         }
-                        
+
                         lblBTScript.Text = BTScript;
                         lblCXScript.Text = CXScript;
                     }
@@ -911,7 +930,7 @@ namespace CCCApp
 
             if (btnNotification.Text == "")
             {
-                btnNotification.Text  = text;
+                btnNotification.Text = text;
                 btnNotification.Show();
             }
             else
@@ -928,12 +947,12 @@ namespace CCCApp
                 max = 0;
             }
 
-            
+
         }
 
         public string checkDouble(string legalID)
         {
-            int i=0;
+            int i = 0;
             using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCXData.mdb;"))
             {
                 try
@@ -950,10 +969,10 @@ namespace CCCApp
                     //`Staff ID` = '" + Staff + "'
                     while (reader.Read())
                     {
-                         i++;
+                        i++;
                         Console.WriteLine(reader["LEGAL_ID"].ToString());
                         Console.WriteLine(reader["STATUS"].ToString());
-                        if (reader["LEGAL_ID"].ToString() == legalID && reader["STATUS"].ToString() == "checked" && i ==1 )
+                        if (reader["LEGAL_ID"].ToString() == legalID && reader["STATUS"].ToString() == "checked" && i == 1)
                         {
                             return "checked";
 

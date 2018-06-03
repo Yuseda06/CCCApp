@@ -32,6 +32,7 @@ namespace CCCApp
         AutoCompleteStringCollection list;
         bool check = true;
         bool isCSA;
+        string MMM;
 
         private void manualAdd_Load(object sender, EventArgs e)
         {
@@ -44,8 +45,8 @@ namespace CCCApp
             //strStaffID = Environment.UserName.ToString();
 
 
-            strStaffID = "450999";
-            intStaffID = 450999;
+            strStaffID = "195613";
+            intStaffID = 195613;
 
 
 
@@ -88,12 +89,12 @@ namespace CCCApp
             }
 
         }
-
+        
         String[] GetList(string s)
         {
             string connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0; HDR = YES;\"";
             OleDbConnection conn = new OleDbConnection(connstr);
-            string cmd = "Select `May$`.WFM FROM `May$` `May$`";
+            string cmd = "Select `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$`";
             OleDbDataAdapter da = new OleDbDataAdapter(cmd, conn);
             DataSet ds = new DataSet();
 
@@ -107,7 +108,9 @@ namespace CCCApp
 
             }
 
+
             int count = ds.Tables[0].Rows.Count;
+
             arr = new string[count];
 
             try
@@ -151,6 +154,24 @@ namespace CCCApp
         {
 
             InitializeComponent();
+
+            try
+            {
+                MMM = DateTime.Now.ToString("MMM").Replace('-', '/');
+                //strStaffID = agentList(intStaffID);
+                
+            }
+            catch (Exception)
+            {
+                MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+            }
+
+            //if (strStaffID == null)
+            //{
+            //    MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
+            //}
+
+
 
         }
 
@@ -415,9 +436,24 @@ namespace CCCApp
                     {
                         remarks += "Briefing, ";
                     }
+                    if (cbTraining.Checked)
+                    {
+                        remarks += "Training, ";
+                    }
+
                     if (cbTransferCall.Checked)
                     {
                         remarks += "Transfer Call, ";
+                    }
+
+                    if (cbComplaint.Checked)
+                    {
+                        remarks += "Complaint, ";
+                    }
+
+                    if (cbRestartPC.Checked)
+                    {
+                        remarks += "Restart PC, ";
                     }
 
 
@@ -459,6 +495,9 @@ namespace CCCApp
                     cbChangePC.Checked = false;
                     cbOther.Checked = false;
                     cbCoaching.Checked = false;
+                    cbRestartPC.Checked = false;
+                    cbComplaint.Checked = false;
+                    cbTraining.Checked = false;
 
                     Check(sender, e);
 
@@ -488,7 +527,7 @@ here:
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `May$`.WFM,`May$`.`Staff ID` FROM `May$` `May$` WHERE(`May$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -537,7 +576,7 @@ here:
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `May$`.WFM,`May$`.`Staff ID` FROM `May$` `May$` WHERE(`May$`.WFM= '" + Name + "')   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.WFM= '" + Name + "')   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -651,6 +690,39 @@ here:
 
         }
 
+
+        int LH;
+        int NRT;
+        string AHT;
+        string DC;
+        string INB;
+
+        public void addItemsInListview(object sender, EventArgs e)
+        {
+            foreach (var index in listViewS.SelectedItems)
+            {
+
+                LH = Convert.ToInt32(listViewS.SelectedItems[0].SubItems[6].Text);
+                NRT = Convert.ToInt32(listViewS.SelectedItems[0].SubItems[7].Text);
+                AHT = listViewS.SelectedItems[0].SubItems[8].Text;
+                DC = listViewS.SelectedItems[0].SubItems[9].Text;
+                INB = listViewS.SelectedItems[0].SubItems[10].Text;
+
+                txtDate.Text = listViewS.SelectedItems[0].SubItems[0].Text;
+                txtStatus.Text = listViewS.SelectedItems[0].SubItems[1].Text;
+                txtStaffID.Text = listViewS.SelectedItems[0].SubItems[4].Text;
+                txtNameList.Text= listViewS.SelectedItems[0].SubItems[5].Text;
+                txtLH.Text = listViewS.SelectedItems[0].SubItems[6].Text;
+                txtNRT.Text = listViewS.SelectedItems[0].SubItems[7].Text;
+                txtAHT.Text= listViewS.SelectedItems[0].SubItems[8].Text;
+                txtDC.Text= listViewS.SelectedItems[0].SubItems[9].Text;
+                txtINB.Text= listViewS.SelectedItems[0].SubItems[10].Text;
+                txtReason.Text = listViewS.SelectedItems[0].SubItems[11].Text;
+
+
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
   
@@ -678,9 +750,12 @@ here:
                         // You should also consider using a prepared query...
                         //MessageBox.Show(index.ToString());
                         string id = listViewS.SelectedItems[0].SubItems[13].Text;
+
+                        
+
                         int dt = Convert.ToInt32(id);
                         updatedBy = Environment.UserName;
-                        string my_querry = "UPDATE AddOn SET Status ='Approved', `Approved By` = '" + updatedBy + "' WHERE ID = " + dt + "";
+                        string my_querry = "UPDATE AddOn SET Status ='Approved', `Approved By` = '" + updatedBy + "', `Login Hour` = " + Convert.ToInt32(txtLH.Text) + ", `Not Ready` = " + Convert.ToInt32(txtNRT.Text) + ", AHT = '" + txtAHT.Text + "', DC = '" + txtDC.Text + "', Inbound = '" + txtINB.Text + "', `Reason / Remarks` = '" + txtReason.Text + "' WHERE ID = " + dt + "";
 
                         // totalPoints = 0;
                         try
@@ -728,7 +803,7 @@ here:
                         string id = listViewS.SelectedItems[0].SubItems[13].Text;
                         int dt = Convert.ToInt32(id);
                         updatedBy = Environment.UserName;
-                        string my_querry = "UPDATE AddOn SET Status ='Declined', `Approved By` = '"+ updatedBy + "' WHERE ID = " + dt + " AND Status = 'Pending'";
+                        string my_querry = "UPDATE AddOn SET Status ='Declined', `Approved By` = '" + updatedBy + "', `Login Hour` = " + Convert.ToInt32(txtLH.Text) + ", `Not Ready` = " + Convert.ToInt32(txtNRT.Text) + ", AHT = '" + txtAHT.Text + "', DC = '" + txtDC.Text + "', Inbound = '" + txtINB.Text + "', `Reason / Remarks` = '" + txtReason.Text + "' WHERE ID = " + dt + "";
 
                         // totalPoints = 0;
                         try
