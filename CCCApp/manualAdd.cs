@@ -45,8 +45,8 @@ namespace CCCApp
             //strStaffID = Environment.UserName.ToString();
 
 
-            strStaffID = "195613";
-            intStaffID = 195613;
+            strStaffID = "193128";
+            intStaffID = 193128;
 
 
 
@@ -466,7 +466,7 @@ namespace CCCApp
 
 
                     command = new OleDbCommand("INSERT INTO AddOn (`Date1`, `Staff ID`, `Agent Name`, `Not Ready`, `Login Hour`, `AHT`, `DC`, `Inbound`, `Reason / Remarks`, `Approved By`,`Status`, `From`, `To`,`Months`,`MIS`) VALUES" +
-                                                               " ('" + dates + "','" + staffID + "','" + name + "'," + notReady + "," + loginHours + ",'" + aht + "','" + discount + "','" + inbound + "','" + remarks + "', '" + updatedBy + "' ,'" + status + "' ,'" + fTime + "' ,'" + tTime + "'," + date4 + ",0)", connection);
+                                                               " ('" + dates + "','" + staffID + "','" + name.Replace("'", "''") + "'," + notReady + "," + loginHours + ",'" + aht + "','" + discount + "','" + inbound + "','" + remarks + "', '" + updatedBy + "' ,'" + status + "' ,'" + fTime + "' ,'" + tTime + "'," + date4 + ",0)", connection);
  
 
 
@@ -574,9 +574,11 @@ here:
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
 
+                    
+
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.WFM= '" + Name + "')   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.WFM= '" + Name.Replace("'", "''") + "')", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'

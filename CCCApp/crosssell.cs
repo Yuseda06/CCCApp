@@ -50,8 +50,8 @@ namespace CCCApp
             }
             else
             {
-                intStaffID = 400584;
-                StaffID = "400584";
+                intStaffID = 192396;
+                StaffID = "192396";
             }
         }
 
@@ -528,7 +528,7 @@ namespace CCCApp
                         }
 
 
-                        String my_querry = "INSERT INTO XSell (CUSTOMER, LEGAL_ID, CARD_NO, STAFF_ID, DATE1, PRODUCT, INTEREST, REMARKS, SOURCE, RHBNOW, ESTATEMENT, BALANCE, STATUS )VALUES('" + txtName.Text + "','" + legalID + "','" + txtCardNo.Text + "','" + StaffID + "' ,'" + date1 + "','" + product + "','" + interested + "','" + txtCriteriaRemarks.Text + "','" + source + "','" + rhb + "','" + estate + "','" + balance + "','" + status + "')";
+                        String my_querry = "INSERT INTO XSell (CUSTOMER, LEGAL_ID, CARD_NO, STAFF_ID, DATE1, PRODUCT, INTEREST, REMARKS, SOURCE, RHBNOW, ESTATEMENT, BALANCE, STATUS )VALUES('" + txtName.Text.Replace("'", "''") + "','" + legalID + "','" + txtCardNo.Text + "','" + StaffID + "' ,'" + date1 + "','" + product + "','" + interested + "','" + txtCriteriaRemarks.Text + "','" + source + "','" + rhb + "','" + estate + "','" + balance + "','" + status + "')";
 
                         OleDbCommand cmd = new OleDbCommand(my_querry, connection);
                         cmd.ExecuteNonQuery();
