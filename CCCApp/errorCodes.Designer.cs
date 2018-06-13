@@ -330,11 +330,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(51, 67);
+            this.label1.Location = new System.Drawing.Point(33, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 22);
+            this.label1.Size = new System.Drawing.Size(182, 18);
             this.label1.TabIndex = 27;
             this.label1.Text = "ATM Response Codes";
             // 
@@ -1893,11 +1893,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label9.Location = new System.Drawing.Point(295, 67);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 22);
+            this.label9.Size = new System.Drawing.Size(138, 18);
             this.label9.TabIndex = 39;
             this.label9.Text = "IBK Error Codes";
             // 
@@ -2938,11 +2938,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(552, 67);
+            this.label14.Location = new System.Drawing.Point(554, 67);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 22);
+            this.label14.Size = new System.Drawing.Size(129, 18);
             this.label14.TabIndex = 50;
             this.label14.Text = "Cardlink Codes";
             // 

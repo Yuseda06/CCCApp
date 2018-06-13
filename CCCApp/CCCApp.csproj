@@ -173,14 +173,13 @@
     <Compile Include="manualAdd.Designer.cs">
       <DependentUpon>manualAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RhbNow.cs">
-      <SubType>Form</SubType>
+    <Compile Include="survey.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RhbNow.Designer.cs">
-      <DependentUpon>RhbNow.cs</DependentUpon>
+    <Compile Include="survey.Designer.cs">
+      <DependentUpon>survey.cs</DependentUpon>
     </Compile>
     <Compile Include="systemLink.cs">
       <SubType>UserControl</SubType>
@@ -225,8 +224,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RhbNow.resx">
-      <DependentUpon>RhbNow.cs</DependentUpon>
+    <EmbeddedResource Include="survey.resx">
+      <DependentUpon>survey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="systemLink.resx">
       <DependentUpon>systemLink.cs</DependentUpon>
@@ -326,6 +325,16 @@
     <None Include="Resources\chat-4-20 blue.png" />
     <None Include="Resources\calculator-5-20 blue.png" />
     <None Include="Resources\bank-4-20 blue.png" />
+    <None Include="Resources\1-filled-241.png" />
+    <None Include="Resources\2-filled-24.png" />
+    <None Include="Resources\3-filled-24.png" />
+    <None Include="Resources\1-filled-24 %281%29.png" />
+    <None Include="Resources\2-filled-24 %281%29.png" />
+    <None Include="Resources\3-filled-241.png" />
+    <None Include="Resources\3-filled-24 %281%29.png" />
+    <None Include="Resources\1-filled-xl.png" />
+    <None Include="Resources\2-filled-xl.png" />
+    <None Include="Resources\3-filled-xl.png" />
     <Content Include="Resources\error-2-20 error.png" />
     <None Include="Resources\trophy-2-20 blue.png" />
     <None Include="Resources\error-2-20 error1.png" />
@@ -334,6 +343,8 @@
     <None Include="Resources\trophy-2-20.png" />
     <None Include="Resources\Picture21.png" />
     <None Include="Resources\Picture22.png" />
+    <None Include="Resources\survey-icon-20 blue.png" />
+    <None Include="Resources\survey-icon-20.png" />
     <Content Include="Resources\view-details-20 blue.png" />
     <None Include="Resources\view-details-20 blue1.png" />
     <Content Include="xsell_eM2_icon.ico" />

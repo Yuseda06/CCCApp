@@ -41,12 +41,14 @@ namespace CCCApp
             txtName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtName.AutoCompleteMode = AutoCompleteMode.Suggest;
 
-            //intStaffID = Convert.ToInt32(Environment.UserName);
-            //strStaffID = Environment.UserName.ToString();
+            intStaffID = Convert.ToInt32(Environment.UserName);
+            strStaffID = Environment.UserName.ToString();
 
 
-            strStaffID = "193128";
-            intStaffID = 193128;
+            //uncomment below for testing
+
+            //strStaffID = "194446";
+            //intStaffID = 194446;
 
 
 
@@ -92,7 +94,7 @@ namespace CCCApp
         
         String[] GetList(string s)
         {
-            string connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0; HDR = YES;\"";
+            string connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0; HDR = YES;\"";
             OleDbConnection conn = new OleDbConnection(connstr);
             string cmd = "Select `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$`";
             OleDbDataAdapter da = new OleDbDataAdapter(cmd, conn);
@@ -196,7 +198,7 @@ namespace CCCApp
         {
             
             OleDbCommand command;
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
             {
                 
                 
@@ -310,7 +312,7 @@ namespace CCCApp
         {
 
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
             {
                 OleDbCommand command;
                 try
@@ -517,7 +519,7 @@ here:
 
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
             {
                 try
                 {
@@ -566,7 +568,7 @@ here:
 
         public string agentListWFM(string Name)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
             {
                 try
                 {
@@ -637,7 +639,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
             {
 
                 {
@@ -652,7 +654,7 @@ here:
 
                         if (isCSA == false)
                         {
-                            DialogResult dialogResult = MessageBox.Show("Are sure you want to delete the item, once deleted it cannot be retrieved!!!", "Deleting Manual Add", MessageBoxButtons.YesNo);
+                            DialogResult dialogResult = MessageBox.Show("Are you sure to remove the item, once deleted it cannot be retrieved!!!", "Deleting Manual Add", MessageBoxButtons.YesNo);
                             if (dialogResult == DialogResult.Yes)
                             {
                                 //do something
@@ -741,7 +743,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
             {
 
                 {
@@ -792,7 +794,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
             {
 
                 {

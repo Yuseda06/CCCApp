@@ -83,6 +83,36 @@ namespace CCCApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_filled_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1-filled-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_filled_241 {
+            get {
+                object obj = ResourceManager.GetObject("1-filled-241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_filled_xl {
+            get {
+                object obj = ResourceManager.GetObject("1-filled-xl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12_filled_20 {
             get {
                 object obj = ResourceManager.GetObject("12-filled-20", resourceCulture);
@@ -123,9 +153,79 @@ namespace CCCApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2_filled_24 {
+            get {
+                object obj = ResourceManager.GetObject("2-filled-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_filled_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("2-filled-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_filled_xl {
+            get {
+                object obj = ResourceManager.GetObject("2-filled-xl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3_filled_20 {
             get {
                 object obj = ResourceManager.GetObject("3-filled-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_filled_24 {
+            get {
+                object obj = ResourceManager.GetObject("3-filled-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_filled_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("3-filled-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_filled_241 {
+            get {
+                object obj = ResourceManager.GetObject("3-filled-241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_filled_xl {
+            get {
+                object obj = ResourceManager.GetObject("3-filled-xl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -777,6 +877,26 @@ namespace CCCApp.Properties {
         internal static System.Drawing.Bitmap spotman1 {
             get {
                 object obj = ResourceManager.GetObject("spotman1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap survey_icon_20 {
+            get {
+                object obj = ResourceManager.GetObject("survey-icon-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap survey_icon_20_blue {
+            get {
+                object obj = ResourceManager.GetObject("survey-icon-20 blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

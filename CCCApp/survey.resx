@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>The purpose of the survey is to obtain understanding on customer behavior on tendency to contact Call Centre to seek assistance for request or inquiry that can be fulfilled via self-service at various channels i.e internet banking, mobile banking, phone banking etc.</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Customer calls to CCC to get assistance on credit card balance inquiry. Does customer calls solely inquiring on the credit card balances or is there any other inquiry or request made by the customer within the same call?</value>
+  </data>
 </root>

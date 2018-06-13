@@ -31,7 +31,7 @@ namespace CCCApp
 
         void checkingID()
         {
-            int j = 0;
+            int j = 1;
             if (j == 1)
             {
                 try
@@ -48,8 +48,8 @@ namespace CCCApp
             }
             else
             {
-                intStaffID = 192396;
-                StaffID = "192396";
+                intStaffID = 194446;
+                StaffID = "194446";
             }
         }
         public dashboard()
@@ -162,7 +162,7 @@ namespace CCCApp
         {
 
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
             {
                 try
                 {
@@ -313,7 +313,7 @@ namespace CCCApp
 
         private void pressEnter1()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
             {
                 try
                 {
@@ -420,7 +420,7 @@ namespace CCCApp
 
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
             {
                 try
                 {

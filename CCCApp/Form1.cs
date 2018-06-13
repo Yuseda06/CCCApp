@@ -44,7 +44,7 @@ namespace CCCApp
             btnBranchCodes.Image = Properties.Resources.bank_4_xl;
             btnSRGuide.Image = Properties.Resources.view_details_xl;
             btnErr.Image = Properties.Resources.error_20;
-
+            btnSurvey.Image = Properties.Resources.survey_icon_20;
             //       using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=C:\\Users\\Yusri\\Desktop\\BTCX.mdb;"))
             //{
 
@@ -73,7 +73,8 @@ namespace CCCApp
             manualAdd1.Visible = false;
             errorCodes1.Visible = false;
             systemLink1.Visible = false;
-            
+            survey1.Visible = false;
+
 
             btnDashboard.BackColor = Color.FromArgb(0, 174, 219);
             btnCrossSell.BackColor = Color.FromArgb(0, 174, 219);
@@ -82,6 +83,7 @@ namespace CCCApp
             btnSRGuide.BackColor = Color.FromArgb(0, 174, 219);
             btnErr.BackColor = Color.FromArgb(0, 174, 219);
             btnSystemLink.BackColor = Color.FromArgb(0, 174, 219);
+            btnSurvey.BackColor = Color.FromArgb(0, 174, 219);
 
             btnSystemLink.Image = Properties.Resources.link_3_20;
             btnDashboard.Image = Properties.Resources.trophy_2_20;
@@ -90,6 +92,7 @@ namespace CCCApp
             btnBranchCodes.Image = Properties.Resources.bank_4_xl;
             btnSRGuide.Image = Properties.Resources.view_details_xl;
             btnErr.Image = Properties.Resources.error_20;
+            btnSurvey.Image = Properties.Resources.survey_icon_20;
 
 
 
@@ -135,6 +138,13 @@ namespace CCCApp
                 btnSystemLink.BackColor = Color.DeepSkyBlue;
                 systemLink1.Visible = true;
                 btnSystemLink.Image = Properties.Resources.link_3_20_blue;
+            }
+
+            else if (click == btnSurvey)
+            {
+                btnSurvey.BackColor = Color.DeepSkyBlue;
+                survey1.Visible = true;
+                btnSurvey.Image = Properties.Resources.survey_icon_20_blue;
             }
 
         }
@@ -221,22 +231,63 @@ namespace CCCApp
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            //if the form is minimized  
-            //hide it from the task bar  
-            //and show the system tray icon (represented by the NotifyIcon control)  
+
+
             if (this.WindowState == FormWindowState.Minimized)
             {
-                Hide();
-                notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(1000);
+
+                if (Environment.UserName.ToString() == "179264")
+                {
+                    Application.Exit();
+
+                }
+
+                else
+
+                {
+                    Hide();
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.ShowBalloonTip(1000);
+                }
             }
+
+            //if (WindowState.ToString() == "Minimized")
+            //{
+            //    this.WindowState = FormWindowState.Restored;
+
+            //}
+            //else
+            //{
+            //    this.WindowState = FormWindowState.Normal;
+            //}
+
+
+
+        }
+
+
+
+
+        public void showBallon()
+        {
+            
+            notifyIcon1.BalloonTipText = "testingggggggggg";
+            notifyIcon1.BalloonTipTitle = "testingggggggggg";
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(15000);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            showBallon();
+
         }
 
         //private void button3_Click(object sender, EventArgs e)
         //{
         //    string url = @"S:\Malaysia Operations\For Internal Use Only\RHB Now\RHB Online Banking V3\Home.html";
 
-    
+
         //}
 
 

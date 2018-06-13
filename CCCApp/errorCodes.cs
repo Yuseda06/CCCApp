@@ -36,7 +36,7 @@ namespace CCCApp
 
 
 
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=ATM.mdb;"))
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\ATM.mdb;"))
                 //B720w246
                 //Provider = Microsoft.ACE.OLEDB.12.0; Password = ""; User ID = Admin; Data Source = D:\BTCX\BTCX.mdb; Mode = Share Deny Write; Extended Properties = ""; Jet OLEDB:System database = ""; Jet OLEDB:Registry Path = ""; Jet OLEDB:Database Password = ""; Jet OLEDB:Engine Type = 5; Jet OLEDB:Database Locking Mode = 0; Jet OLEDB:Global Partial Bulk Ops = 2; Jet OLEDB:Global Bulk Transactions = 1; Jet OLEDB:New Database Password = ""; Jet OLEDB:Create System Database = False; Jet OLEDB:Encrypt Database = False; Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;Jet OLEDB:Limited DB Caching=False;Jet OLEDB:Bypass ChoiceField Validation=False
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCX.mdb;"))
@@ -45,7 +45,7 @@ namespace CCCApp
                     {
 
 
-                        OleDbCommand command = new OleDbCommand("SELECT CODE, DESCRIPTION, RESPONSE FROM `ATM`.ATM ATM WHERE(CODE = '" + txtSearchATM.Text + "') ", connection);
+                        OleDbCommand command = new OleDbCommand("SELECT CODE, DESCRIPTION, RESPONSE FROM `\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\ATM`.ATM ATM WHERE(CODE = '" + txtSearchATM.Text + "') ", connection);
                         //OleDbCommand command = new OleDbCommand("SELECT  ATM.FINAL_ID,ATM.IBK_CUST,ATM.ESTMT_CUST,ATM.CARD_NUMBER,ATM.CIS_SEGMENT, ATM.NAME_FULL FROM `\\\\B720W999\\BTCX\\BTCX`.ATM ATM WHERE(ATM.FINAL_ID = '" + legalID + "') ", connection);
                         connection.Open();
 
@@ -110,7 +110,7 @@ namespace CCCApp
 
 
 
-                    using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=IBKError.mdb;"))
+                    using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\IBKError.mdb;"))
                     //B720w246
                     //Provider = Microsoft.ACE.OLEDB.12.0; Password = ""; User ID = Admin; Data Source = D:\BTCX\BTCX.mdb; Mode = Share Deny Write; Extended Properties = ""; Jet OLEDB:System database = ""; Jet OLEDB:Registry Path = ""; Jet OLEDB:Database Password = ""; Jet OLEDB:Engine Type = 5; Jet OLEDB:Database Locking Mode = 0; Jet OLEDB:Global Partial Bulk Ops = 2; Jet OLEDB:Global Bulk Transactions = 1; Jet OLEDB:New Database Password = ""; Jet OLEDB:Create System Database = False; Jet OLEDB:Encrypt Database = False; Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;Jet OLEDB:Limited DB Caching=False;Jet OLEDB:Bypass ChoiceField Validation=False
                     //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCX.mdb;"))
@@ -119,7 +119,7 @@ namespace CCCApp
                         {
 
 
-                            OleDbCommand command = new OleDbCommand("SELECT ERR1, ERRDES,ERRDES1 FROM `IBKError`.IBKErrorCodes IBKErrorCodes WHERE(ERR = '" + txtSearchIBK.Text + "') ", connection);
+                            OleDbCommand command = new OleDbCommand("SELECT ERR1, ERRDES,ERRDES1 FROM `\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\IBKError`.IBKErrorCodes IBKErrorCodes WHERE(ERR = '" + txtSearchIBK.Text + "') ", connection);
                             //OleDbCommand command = new OleDbCommand("SELECT  ATM.FINAL_ID,ATM.IBK_CUST,ATM.ESTMT_CUST,ATM.CARD_NUMBER,ATM.CIS_SEGMENT, ATM.NAME_FULL FROM `\\\\B720W999\\BTCX\\BTCX`.ATM ATM WHERE(ATM.FINAL_ID = '" + legalID + "') ", connection);
                             connection.Open();
 

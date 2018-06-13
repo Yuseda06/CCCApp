@@ -562,7 +562,7 @@
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(75, 26);
             this.btnCheck.TabIndex = 55;
-            this.btnCheck.Text = "Check";
+            this.btnCheck.Text = "Refresh";
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.Check);
             // 
@@ -665,7 +665,7 @@
             // 
             // btnDecline
             // 
-            this.btnDecline.BackColor = System.Drawing.Color.Tomato;
+            this.btnDecline.BackColor = System.Drawing.Color.OrangeRed;
             this.btnDecline.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnDecline.FlatAppearance.BorderSize = 2;
             this.btnDecline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -682,7 +682,7 @@
             // 
             // btnApprove
             // 
-            this.btnApprove.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnApprove.BackColor = System.Drawing.Color.ForestGreen;
             this.btnApprove.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnApprove.FlatAppearance.BorderSize = 2;
             this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

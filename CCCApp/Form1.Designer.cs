@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSurvey = new System.Windows.Forms.Button();
             this.btnSystemLink = new System.Windows.Forms.Button();
             this.btnErr = new System.Windows.Forms.Button();
             this.btnSRGuide = new System.Windows.Forms.Button();
@@ -59,6 +60,8 @@
             this.calculator1 = new CCCApp.calculator();
             this.dashboard1 = new CCCApp.dashboard();
             this.systemLink1 = new CCCApp.systemLink();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.survey1 = new CCCApp.survey();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,6 +72,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.btnSurvey);
             this.panel1.Controls.Add(this.btnSystemLink);
             this.panel1.Controls.Add(this.btnErr);
             this.panel1.Controls.Add(this.btnSRGuide);
@@ -86,6 +90,28 @@
             this.panel1.Size = new System.Drawing.Size(200, 540);
             this.panel1.TabIndex = 0;
             // 
+            // btnSurvey
+            // 
+            this.btnSurvey.FlatAppearance.BorderSize = 0;
+            this.btnSurvey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSurvey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSurvey.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSurvey.ForeColor = System.Drawing.Color.White;
+            this.btnSurvey.Image = global::CCCApp.Properties.Resources.survey_icon_20;
+            this.btnSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSurvey.Location = new System.Drawing.Point(0, 443);
+            this.btnSurvey.Name = "btnSurvey";
+            this.btnSurvey.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnSurvey.Size = new System.Drawing.Size(200, 45);
+            this.btnSurvey.TabIndex = 18;
+            this.btnSurvey.Text = "   Survey";
+            this.btnSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSurvey.UseVisualStyleBackColor = true;
+            this.btnSurvey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Menu_Clicked);
+            this.btnSurvey.MouseEnter += new System.EventHandler(this.menuHover);
+            this.btnSurvey.MouseLeave += new System.EventHandler(this.menuleave);
+            // 
             // btnSystemLink
             // 
             this.btnSystemLink.FlatAppearance.BorderSize = 0;
@@ -101,7 +127,7 @@
             this.btnSystemLink.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnSystemLink.Size = new System.Drawing.Size(200, 45);
             this.btnSystemLink.TabIndex = 17;
-            this.btnSystemLink.Text = "    System Links";
+            this.btnSystemLink.Text = "   System Links";
             this.btnSystemLink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSystemLink.UseVisualStyleBackColor = true;
             this.btnSystemLink.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Menu_Clicked);
@@ -288,7 +314,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label4.Location = new System.Drawing.Point(211, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 21);
+            this.label4.Size = new System.Drawing.Size(195, 21);
             this.label4.TabIndex = 19;
             this.label4.Text = "TOGETHER WE PROGRESS";
             // 
@@ -452,12 +478,27 @@
             this.systemLink1.TabIndex = 30;
             this.systemLink1.Visible = false;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // survey1
+            // 
+            this.survey1.BackColor = System.Drawing.Color.White;
+            this.survey1.Location = new System.Drawing.Point(207, 47);
+            this.survey1.Name = "survey1";
+            this.survey1.Size = new System.Drawing.Size(729, 482);
+            this.survey1.TabIndex = 31;
+            this.survey1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(940, 540);
+            this.Controls.Add(this.survey1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
@@ -483,9 +524,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CCCApp";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_Resize);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -528,6 +569,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private systemLink systemLink1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btnSurvey;
+        private survey survey1;
     }
 }
 

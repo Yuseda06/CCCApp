@@ -150,7 +150,7 @@
             // 
             this.lblScore1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore1.ForeColor = System.Drawing.Color.Gold;
-            this.lblScore1.Location = new System.Drawing.Point(247, 107);
+            this.lblScore1.Location = new System.Drawing.Point(247, 98);
             this.lblScore1.Name = "lblScore1";
             this.lblScore1.Size = new System.Drawing.Size(48, 24);
             this.lblScore1.TabIndex = 11;
@@ -161,7 +161,7 @@
             // 
             this.lblScore2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblScore2.Location = new System.Drawing.Point(247, 145);
+            this.lblScore2.Location = new System.Drawing.Point(247, 136);
             this.lblScore2.Name = "lblScore2";
             this.lblScore2.Size = new System.Drawing.Size(48, 24);
             this.lblScore2.TabIndex = 15;
@@ -172,7 +172,7 @@
             // 
             this.lblScore4.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore4.Location = new System.Drawing.Point(247, 221);
+            this.lblScore4.Location = new System.Drawing.Point(247, 212);
             this.lblScore4.Name = "lblScore4";
             this.lblScore4.Size = new System.Drawing.Size(48, 24);
             this.lblScore4.TabIndex = 23;
@@ -183,7 +183,7 @@
             // 
             this.lblScore3.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore3.ForeColor = System.Drawing.Color.Chocolate;
-            this.lblScore3.Location = new System.Drawing.Point(247, 183);
+            this.lblScore3.Location = new System.Drawing.Point(247, 174);
             this.lblScore3.Name = "lblScore3";
             this.lblScore3.Size = new System.Drawing.Size(48, 24);
             this.lblScore3.TabIndex = 19;
@@ -194,7 +194,7 @@
             // 
             this.lblScore8.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore8.Location = new System.Drawing.Point(670, 184);
+            this.lblScore8.Location = new System.Drawing.Point(670, 175);
             this.lblScore8.Name = "lblScore8";
             this.lblScore8.Size = new System.Drawing.Size(48, 24);
             this.lblScore8.TabIndex = 39;
@@ -205,7 +205,7 @@
             // 
             this.lblScore7.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore7.Location = new System.Drawing.Point(670, 146);
+            this.lblScore7.Location = new System.Drawing.Point(670, 137);
             this.lblScore7.Name = "lblScore7";
             this.lblScore7.Size = new System.Drawing.Size(48, 24);
             this.lblScore7.TabIndex = 35;
@@ -216,7 +216,7 @@
             // 
             this.lblScore6.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore6.Location = new System.Drawing.Point(670, 108);
+            this.lblScore6.Location = new System.Drawing.Point(670, 99);
             this.lblScore6.Name = "lblScore6";
             this.lblScore6.Size = new System.Drawing.Size(48, 24);
             this.lblScore6.TabIndex = 31;
@@ -227,7 +227,7 @@
             // 
             this.lblScore5.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore5.Location = new System.Drawing.Point(247, 259);
+            this.lblScore5.Location = new System.Drawing.Point(247, 250);
             this.lblScore5.Name = "lblScore5";
             this.lblScore5.Size = new System.Drawing.Size(48, 24);
             this.lblScore5.TabIndex = 27;
@@ -238,7 +238,7 @@
             // 
             this.lblScore10.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore10.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore10.Location = new System.Drawing.Point(670, 260);
+            this.lblScore10.Location = new System.Drawing.Point(670, 251);
             this.lblScore10.Name = "lblScore10";
             this.lblScore10.Size = new System.Drawing.Size(48, 24);
             this.lblScore10.TabIndex = 47;
@@ -249,7 +249,7 @@
             // 
             this.lblScore9.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblScore9.Location = new System.Drawing.Point(670, 222);
+            this.lblScore9.Location = new System.Drawing.Point(670, 213);
             this.lblScore9.Name = "lblScore9";
             this.lblScore9.Size = new System.Drawing.Size(48, 24);
             this.lblScore9.TabIndex = 43;
@@ -820,7 +820,7 @@
             // 
             this.lblScoreTM3.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreTM3.ForeColor = System.Drawing.Color.Chocolate;
-            this.lblScoreTM3.Location = new System.Drawing.Point(247, 429);
+            this.lblScoreTM3.Location = new System.Drawing.Point(247, 423);
             this.lblScoreTM3.Name = "lblScoreTM3";
             this.lblScoreTM3.Size = new System.Drawing.Size(48, 24);
             this.lblScoreTM3.TabIndex = 76;
@@ -859,7 +859,7 @@
             // 
             this.lblScoreTM2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreTM2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblScoreTM2.Location = new System.Drawing.Point(247, 391);
+            this.lblScoreTM2.Location = new System.Drawing.Point(247, 385);
             this.lblScoreTM2.Name = "lblScoreTM2";
             this.lblScoreTM2.Size = new System.Drawing.Size(48, 24);
             this.lblScoreTM2.TabIndex = 73;
@@ -898,7 +898,7 @@
             // 
             this.lblScoreTM1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreTM1.ForeColor = System.Drawing.Color.Gold;
-            this.lblScoreTM1.Location = new System.Drawing.Point(247, 353);
+            this.lblScoreTM1.Location = new System.Drawing.Point(247, 347);
             this.lblScoreTM1.Name = "lblScoreTM1";
             this.lblScoreTM1.Size = new System.Drawing.Size(48, 24);
             this.lblScoreTM1.TabIndex = 70;
@@ -1008,7 +1008,7 @@
             // 
             this.lblScoreUH3.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreUH3.ForeColor = System.Drawing.Color.Chocolate;
-            this.lblScoreUH3.Location = new System.Drawing.Point(670, 435);
+            this.lblScoreUH3.Location = new System.Drawing.Point(670, 429);
             this.lblScoreUH3.Name = "lblScoreUH3";
             this.lblScoreUH3.Size = new System.Drawing.Size(48, 24);
             this.lblScoreUH3.TabIndex = 89;
@@ -1047,7 +1047,7 @@
             // 
             this.lblScoreUH2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreUH2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblScoreUH2.Location = new System.Drawing.Point(670, 397);
+            this.lblScoreUH2.Location = new System.Drawing.Point(670, 391);
             this.lblScoreUH2.Name = "lblScoreUH2";
             this.lblScoreUH2.Size = new System.Drawing.Size(48, 24);
             this.lblScoreUH2.TabIndex = 86;
@@ -1086,7 +1086,7 @@
             // 
             this.lblScoreUH1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreUH1.ForeColor = System.Drawing.Color.Gold;
-            this.lblScoreUH1.Location = new System.Drawing.Point(670, 359);
+            this.lblScoreUH1.Location = new System.Drawing.Point(670, 353);
             this.lblScoreUH1.Name = "lblScoreUH1";
             this.lblScoreUH1.Size = new System.Drawing.Size(48, 24);
             this.lblScoreUH1.TabIndex = 83;

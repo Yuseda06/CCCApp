@@ -45,8 +45,13 @@
             this.txtCriteriaRemarks = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.picEli = new System.Windows.Forms.PictureBox();
             this.lbl80 = new System.Windows.Forms.Label();
             this.txtAvailable = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,6 +68,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.picESTMT = new System.Windows.Forms.PictureBox();
+            this.picRHB = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -71,30 +80,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.picEli = new System.Windows.Forms.PictureBox();
-            this.picESTMT = new System.Windows.Forms.PictureBox();
-            this.picRHB = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblSearchHere = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEli)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picESTMT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRHB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCustomer
@@ -154,7 +155,7 @@
             this.btnNotification.FlatAppearance.BorderSize = 0;
             this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnNotification.ForeColor = System.Drawing.SystemColors.GrayText;
             this.btnNotification.Location = new System.Drawing.Point(0, 422);
             this.btnNotification.Name = "btnNotification";
             this.btnNotification.Size = new System.Drawing.Size(733, 38);
@@ -271,6 +272,46 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.checkingCriteria);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::CCCApp.Properties.Resources.arr;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(347, 105);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(10, 12);
+            this.pictureBox6.TabIndex = 30;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::CCCApp.Properties.Resources.arr;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(347, 85);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(10, 12);
+            this.pictureBox5.TabIndex = 29;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::CCCApp.Properties.Resources.arr;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(347, 65);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(10, 12);
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::CCCApp.Properties.Resources.arr;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(347, 45);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 12);
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,6 +331,17 @@
             this.label13.Size = new System.Drawing.Size(63, 36);
             this.label13.TabIndex = 26;
             this.label13.Text = "Available Balance";
+            // 
+            // picEli
+            // 
+            this.picEli.BackgroundImage = global::CCCApp.Properties.Resources.yes;
+            this.picEli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEli.Location = new System.Drawing.Point(263, 67);
+            this.picEli.Name = "picEli";
+            this.picEli.Size = new System.Drawing.Size(28, 24);
+            this.picEli.TabIndex = 25;
+            this.picEli.TabStop = false;
+            this.picEli.Visible = false;
             // 
             // lbl80
             // 
@@ -475,9 +527,50 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "RHB Now";
             // 
+            // picESTMT
+            // 
+            this.picESTMT.BackgroundImage = global::CCCApp.Properties.Resources.png_wrong_cross_png_small_medium_large_600;
+            this.picESTMT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picESTMT.Location = new System.Drawing.Point(277, 53);
+            this.picESTMT.Name = "picESTMT";
+            this.picESTMT.Size = new System.Drawing.Size(45, 43);
+            this.picESTMT.TabIndex = 3;
+            this.picESTMT.TabStop = false;
+            // 
+            // picRHB
+            // 
+            this.picRHB.BackgroundImage = global::CCCApp.Properties.Resources.yes;
+            this.picRHB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picRHB.Location = new System.Drawing.Point(107, 53);
+            this.picRHB.Name = "picRHB";
+            this.picRHB.Size = new System.Drawing.Size(45, 43);
+            this.picRHB.TabIndex = 2;
+            this.picRHB.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::CCCApp.Properties.Resources.estatements2;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(176, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(95, 72);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::CCCApp.Properties.Resources.spotman;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 72);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblSearchHere);
             this.groupBox1.Controls.Add(this.txtCardNo);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtLegalID);
@@ -555,96 +648,18 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox6
+            // lblSearchHere
             // 
-            this.pictureBox6.BackgroundImage = global::CCCApp.Properties.Resources.arr;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(347, 105);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(10, 12);
-            this.pictureBox6.TabIndex = 30;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::CCCApp.Properties.Resources.arr;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(347, 85);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(10, 12);
-            this.pictureBox5.TabIndex = 29;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::CCCApp.Properties.Resources.arr;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(347, 65);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(10, 12);
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::CCCApp.Properties.Resources.arr;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(347, 45);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(10, 12);
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // picEli
-            // 
-            this.picEli.BackgroundImage = global::CCCApp.Properties.Resources.yes;
-            this.picEli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEli.Location = new System.Drawing.Point(263, 67);
-            this.picEli.Name = "picEli";
-            this.picEli.Size = new System.Drawing.Size(28, 24);
-            this.picEli.TabIndex = 25;
-            this.picEli.TabStop = false;
-            this.picEli.Visible = false;
-            // 
-            // picESTMT
-            // 
-            this.picESTMT.BackgroundImage = global::CCCApp.Properties.Resources.png_wrong_cross_png_small_medium_large_600;
-            this.picESTMT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picESTMT.Location = new System.Drawing.Point(277, 53);
-            this.picESTMT.Name = "picESTMT";
-            this.picESTMT.Size = new System.Drawing.Size(45, 43);
-            this.picESTMT.TabIndex = 3;
-            this.picESTMT.TabStop = false;
-            // 
-            // picRHB
-            // 
-            this.picRHB.BackgroundImage = global::CCCApp.Properties.Resources.yes;
-            this.picRHB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picRHB.Location = new System.Drawing.Point(107, 53);
-            this.picRHB.Name = "picRHB";
-            this.picRHB.Size = new System.Drawing.Size(45, 43);
-            this.picRHB.TabIndex = 2;
-            this.picRHB.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::CCCApp.Properties.Resources.estatements2;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(176, 24);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 72);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::CCCApp.Properties.Resources.spotman;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 72);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblSearchHere.BackColor = System.Drawing.Color.Transparent;
+            this.lblSearchHere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchHere.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblSearchHere.Location = new System.Drawing.Point(91, 22);
+            this.lblSearchHere.Name = "lblSearchHere";
+            this.lblSearchHere.Size = new System.Drawing.Size(210, 23);
+            this.lblSearchHere.TabIndex = 6;
+            this.lblSearchHere.Text = "begin the searching here!";
+            this.lblSearchHere.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSearchHere.Click += new System.EventHandler(this.setToInvisible);
             // 
             // crosssell
             // 
@@ -663,19 +678,19 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEli)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picESTMT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRHB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,5 +746,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCriteriaRemarks;
         public System.Windows.Forms.TextBox txtAvailable;
+        private System.Windows.Forms.Label lblSearchHere;
     }
 }

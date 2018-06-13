@@ -31,7 +31,7 @@ namespace CCCApp
 
         void checkingID()
         {
-            int j = 0;
+            int j = 1;
             if (j == 1)
             {
                 try
@@ -50,10 +50,17 @@ namespace CCCApp
             }
             else
             {
-                intStaffID = 192396;
-                StaffID = "192396";
+                intStaffID = 194446;
+                StaffID = "194446";
             }
         }
+
+        public void setToInvisible(object sender, EventArgs e)
+        {
+            lblSearchHere.Visible = false;
+            txtLegalID.Select();
+        }
+
 
         public crosssell()
         {
@@ -144,8 +151,8 @@ namespace CCCApp
             Outlook.Application app = new Outlook.Application();
             Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
             mailItem.Subject = subject;
-            //mailItem.To = "CCC Sales Support";
-            mailItem.To = "179264";
+            mailItem.To = "CCC Sales Support";
+            //mailItem.To = "179264";
             crosssell cro = new crosssell();
 
             mailItem.Body = body;
@@ -270,7 +277,7 @@ namespace CCCApp
 
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
             {
                 try
                 {
@@ -489,7 +496,7 @@ namespace CCCApp
 
         private void insertDataMDB()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCXData.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCXData.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
 
@@ -554,7 +561,7 @@ namespace CCCApp
         private void insertDataCSA()
         {
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
 
                 try
                 {
@@ -620,7 +627,7 @@ namespace CCCApp
                 }
 
             here:
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
 
@@ -700,7 +707,7 @@ namespace CCCApp
 
         public string agentListTM(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
             {
                 try
                 {
@@ -746,7 +753,7 @@ namespace CCCApp
 
         public string agentListUH(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
             {
                 try
                 {
@@ -825,16 +832,16 @@ namespace CCCApp
                 picRHB.BackgroundImage = null;
                 picESTMT.BackgroundImage = null;
 
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCX.mdb;"))
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCX.mdb;"))
                 //B720w246
                 //Provider = Microsoft.ACE.OLEDB.12.0; Password = ""; User ID = Admin; Data Source = D:\BTCX\BTCX.mdb; Mode = Share Deny Write; Extended Properties = ""; Jet OLEDB:System database = ""; Jet OLEDB:Registry Path = ""; Jet OLEDB:Database Password = ""; Jet OLEDB:Engine Type = 5; Jet OLEDB:Database Locking Mode = 0; Jet OLEDB:Global Partial Bulk Ops = 2; Jet OLEDB:Global Bulk Transactions = 1; Jet OLEDB:New Database Password = ""; Jet OLEDB:Create System Database = False; Jet OLEDB:Encrypt Database = False; Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;Jet OLEDB:Limited DB Caching=False;Jet OLEDB:Bypass ChoiceField Validation=False
-                //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCX.mdb;"))
+                //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Yusri\\Desktop\\repo\\CCCApp21\\CCCApp\\CCCApp\\bin\\Debug\\XSell.xlsx;Extended Properties = \"Excel 12.0 Xml; HDR = YES; \""))
                 {
                     try
                     {
 
 
-                        OleDbCommand command = new OleDbCommand("SELECT  XSell.FINAL_ID,XSell.IBK_CUST,XSell.ESTMT_CUST,XSell.CARD_NUMBER,XSell.CIS_SEGMENT, XSell.NAME_FULL FROM `BTCX`.XSell XSell WHERE(XSell.FINAL_ID = '" + legalID + "') ", connection);
+                        OleDbCommand command = new OleDbCommand("SELECT  * FROM XSell WHERE(FINAL_ID = '" + legalID + "') ", connection);
                         //OleDbCommand command = new OleDbCommand("SELECT  XSell.FINAL_ID,XSell.IBK_CUST,XSell.ESTMT_CUST,XSell.CARD_NUMBER,XSell.CIS_SEGMENT, XSell.NAME_FULL FROM `\\\\B720W999\\BTCX\\BTCX`.XSell XSell WHERE(XSell.FINAL_ID = '" + legalID + "') ", connection);
                         connection.Open();
 
@@ -902,6 +909,7 @@ namespace CCCApp
 
                         lblBTScript.Text = BTScript;
                         lblCXScript.Text = CXScript;
+                        lblSearchHere.Visible = true;
                     }
                     catch (Exception ex)
                     {
@@ -921,6 +929,7 @@ namespace CCCApp
             }
 
             secondLegalID = legalID;
+           
         }
 
         int i;
@@ -953,7 +962,7 @@ namespace CCCApp
         public string checkDouble(string legalID)
         {
             int i = 0;
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BTCXData.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCXData.mdb;"))
             {
                 try
                 {
