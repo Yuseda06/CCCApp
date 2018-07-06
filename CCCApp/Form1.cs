@@ -17,12 +17,18 @@ namespace CCCApp
 
     public partial class MainForm : Form
     {
-        
+
+
+        systemLink sys = new systemLink();
+        dashboard dash = new dashboard();
         
 
         public MainForm()
         {
             InitializeComponent();
+
+            dashboard dash = new dashboard();
+
 
         }
 
@@ -63,7 +69,7 @@ namespace CCCApp
         }
 
         
-         private void Menu_Clicked(object sender, MouseEventArgs e)
+         public void Menu_Clicked(object sender, MouseEventArgs e)
          {
             Button click = sender as Button;
             dashboard1.Visible = false;
@@ -101,6 +107,8 @@ namespace CCCApp
                 dashboard1.Visible = true;
                 btnDashboard.BackColor = Color.DeepSkyBlue;
                 btnDashboard.Image = Properties.Resources.trophy_2_20_blue;
+   
+
 
             }
             else if(click == btnCrossSell)
@@ -169,8 +177,8 @@ namespace CCCApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // Environment.Exit(1);
-            this.WindowState = FormWindowState.Minimized;
+            Environment.Exit(1);
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void menuHover(object sender, EventArgs e)
@@ -279,7 +287,10 @@ namespace CCCApp
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            showBallon();
+            //showBallon();
+
+            
+            sys.readTermination();
 
         }
 

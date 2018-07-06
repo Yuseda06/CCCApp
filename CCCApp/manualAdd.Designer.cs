@@ -86,6 +86,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDecline = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.cbPending = new System.Windows.Forms.CheckBox();
@@ -113,6 +114,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtReason = new System.Windows.Forms.TextBox();
+            this.btnAdjust = new System.Windows.Forms.Button();
+            this.cbMIS = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -210,7 +213,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Nor Ready";
+            this.label2.Text = "Not Ready";
             // 
             // label1
             // 
@@ -363,7 +366,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(608, 21);
+            this.label5.Location = new System.Drawing.Point(608, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 19;
@@ -372,7 +375,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(669, 21);
+            this.label6.Location = new System.Drawing.Point(669, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(10, 13);
             this.label6.TabIndex = 27;
@@ -399,7 +402,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 19);
+            this.label9.Location = new System.Drawing.Point(6, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 34;
@@ -407,8 +410,6 @@
             // 
             // txtName
             // 
-            this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(67, 48);
             this.txtName.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
@@ -430,7 +431,7 @@
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(64, 19);
+            this.lblStaffID.Location = new System.Drawing.Point(64, 25);
             this.lblStaffID.Name = "lblStaffID";
             this.lblStaffID.Size = new System.Drawing.Size(0, 13);
             this.lblStaffID.TabIndex = 38;
@@ -438,7 +439,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(333, 26);
+            this.label11.Location = new System.Drawing.Point(333, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 39;
@@ -456,7 +457,7 @@
             // FromH
             // 
             this.FromH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromH.Location = new System.Drawing.Point(648, 19);
+            this.FromH.Location = new System.Drawing.Point(648, 23);
             this.FromH.Name = "FromH";
             this.FromH.Size = new System.Drawing.Size(22, 20);
             this.FromH.TabIndex = 43;
@@ -465,7 +466,7 @@
             // FromM
             // 
             this.FromM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromM.Location = new System.Drawing.Point(677, 19);
+            this.FromM.Location = new System.Drawing.Point(677, 23);
             this.FromM.Name = "FromM";
             this.FromM.Size = new System.Drawing.Size(22, 20);
             this.FromM.TabIndex = 44;
@@ -474,7 +475,7 @@
             // FAM
             // 
             this.FAM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FAM.Location = new System.Drawing.Point(704, 19);
+            this.FAM.Location = new System.Drawing.Point(704, 23);
             this.FAM.Name = "FAM";
             this.FAM.Size = new System.Drawing.Size(22, 20);
             this.FAM.TabIndex = 45;
@@ -583,7 +584,8 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader14,
-            this.columnHeader13});
+            this.columnHeader13,
+            this.columnHeader15});
             this.listViewS.FullRowSelect = true;
             this.listViewS.GridLines = true;
             this.listViewS.Location = new System.Drawing.Point(9, 204);
@@ -592,6 +594,7 @@
             this.listViewS.TabIndex = 56;
             this.listViewS.UseCompatibleStateImageBehavior = false;
             this.listViewS.View = System.Windows.Forms.View.Details;
+            this.listViewS.SelectedIndexChanged += new System.EventHandler(this.listViewS_SelectedIndexChanged);
             this.listViewS.VisibleChanged += new System.EventHandler(this.Check);
             this.listViewS.Click += new System.EventHandler(this.addItemsInListview);
             // 
@@ -656,12 +659,17 @@
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "AprBy";
+            this.columnHeader14.Text = "APRBY";
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "No";
             this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "MIS";
+            this.columnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDecline
             // 
@@ -675,7 +683,7 @@
             this.btnDecline.Name = "btnDecline";
             this.btnDecline.Size = new System.Drawing.Size(75, 26);
             this.btnDecline.TabIndex = 57;
-            this.btnDecline.Text = "Decline";
+            this.btnDecline.Text = "Declined";
             this.btnDecline.UseVisualStyleBackColor = false;
             this.btnDecline.Visible = false;
             this.btnDecline.Click += new System.EventHandler(this.decline);
@@ -714,7 +722,7 @@
             // 
             this.cbApproved.AutoSize = true;
             this.cbApproved.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbApproved.Location = new System.Drawing.Point(195, 179);
+            this.cbApproved.Location = new System.Drawing.Point(204, 179);
             this.cbApproved.Name = "cbApproved";
             this.cbApproved.Size = new System.Drawing.Size(70, 17);
             this.cbApproved.TabIndex = 60;
@@ -727,7 +735,7 @@
             // 
             this.cbDeclined.AutoSize = true;
             this.cbDeclined.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbDeclined.Location = new System.Drawing.Point(271, 179);
+            this.cbDeclined.Location = new System.Drawing.Point(284, 179);
             this.cbDeclined.Name = "cbDeclined";
             this.cbDeclined.Size = new System.Drawing.Size(66, 17);
             this.cbDeclined.TabIndex = 61;
@@ -1011,11 +1019,41 @@
             this.txtReason.TabIndex = 19;
             this.txtReason.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnAdjust
+            // 
+            this.btnAdjust.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAdjust.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnAdjust.FlatAppearance.BorderSize = 2;
+            this.btnAdjust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjust.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdjust.ForeColor = System.Drawing.Color.White;
+            this.btnAdjust.Location = new System.Drawing.Point(573, 456);
+            this.btnAdjust.Name = "btnAdjust";
+            this.btnAdjust.Size = new System.Drawing.Size(75, 26);
+            this.btnAdjust.TabIndex = 63;
+            this.btnAdjust.Text = "Adjust";
+            this.btnAdjust.UseVisualStyleBackColor = false;
+            this.btnAdjust.Visible = false;
+            this.btnAdjust.Click += new System.EventHandler(this.adjust);
+            // 
+            // cbMIS
+            // 
+            this.cbMIS.AutoSize = true;
+            this.cbMIS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbMIS.Location = new System.Drawing.Point(356, 179);
+            this.cbMIS.Name = "cbMIS";
+            this.cbMIS.Size = new System.Drawing.Size(43, 17);
+            this.cbMIS.TabIndex = 64;
+            this.cbMIS.Text = "MIS";
+            this.cbMIS.UseVisualStyleBackColor = true;
+            this.cbMIS.Visible = false;
+            // 
             // manualAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cbMIS);
+            this.Controls.Add(this.btnAdjust);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cbDeclined);
             this.Controls.Add(this.cbApproved);
@@ -1144,5 +1182,8 @@
         private System.Windows.Forms.CheckBox cbRestartPC;
         private System.Windows.Forms.CheckBox cbComplaint;
         private System.Windows.Forms.CheckBox cbTraining;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.Button btnAdjust;
+        private System.Windows.Forms.CheckBox cbMIS;
     }
 }

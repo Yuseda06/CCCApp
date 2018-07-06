@@ -130,6 +130,9 @@
   <data name="self-service-kiosk-24 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\self-service-kiosk-24 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3-filled-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3-filled-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="power-2-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\power-2-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,6 +163,9 @@
   <data name="emptyGoldBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emptyGoldBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="giphy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calculator -5-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator -5-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,20 +178,26 @@
   <data name="2-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="list-2-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list-2-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sm_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sm_full.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="survey-icon-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\survey-icon-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calculator-5-20 blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator-5-20 blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5b212e6bb5386469420801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5b212e6bb5386469420801.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SilverMistyIvorygull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SilverMistyIvorygull.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="survey-icon-20 blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\survey-icon-20 blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,9 +229,6 @@
   <data name="btcxplan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btcxplan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Picture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,8 +238,14 @@
   <data name="goldbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\goldbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="onHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\onHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2-filled-24 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2-filled-24 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -246,6 +261,9 @@
   </data>
   <data name="view-details-20 blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view-details-20 blue1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movi0e1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movi0e1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vertical-divider-line_253162" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vertical-divider-line_253162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +286,14 @@
   <data name="view-details-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view-details-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SpryGrotesqueIvorybilledwoodpecker-size_restricted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpryGrotesqueIvorybilledwoodpecker-size_restricted.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="error-2-20 error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error-2-20 error1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="movi0e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movi0e.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bank-4-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bank-4-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,8 +310,8 @@
   <data name="Picture3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="self-service-kiosk-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\self-service-kiosk-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="7-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,6 +328,9 @@
   <data name="error-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tumblr_p3qjabk8Xc1qzm8dwo1_400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tumblr_p3qjabk8Xc1qzm8dwo1_400.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Picture5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -316,11 +343,14 @@
   <data name="P60w81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P60w81.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="movi2e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movi2e.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="xx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -333,6 +363,9 @@
   </data>
   <data name="spotman1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spotman1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="self-service-kiosk-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\self-service-kiosk-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5-filled-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5-filled-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,6 +385,9 @@
   <data name="png-wrong-cross-png-small-medium-large-600" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-wrong-cross-png-small-medium-large-600.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="giphy2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -363,6 +399,9 @@
   </data>
   <data name="2-filled-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2-filled-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy11.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="self-service-kiosk-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\self-service-kiosk-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,7 +427,7 @@
   <data name="code-optimization-2-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\code-optimization-2-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3-filled-xl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3-filled-xl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6k2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6k2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

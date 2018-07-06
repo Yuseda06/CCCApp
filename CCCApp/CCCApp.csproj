@@ -335,6 +335,8 @@
     <None Include="Resources\1-filled-xl.png" />
     <None Include="Resources\2-filled-xl.png" />
     <None Include="Resources\3-filled-xl.png" />
+    <None Include="Resources\5b212e6bb5386469420801.gif" />
+    <None Include="Resources\6k2.gif" />
     <Content Include="Resources\error-2-20 error.png" />
     <None Include="Resources\trophy-2-20 blue.png" />
     <None Include="Resources\error-2-20 error1.png" />
@@ -345,6 +347,17 @@
     <None Include="Resources\Picture22.png" />
     <None Include="Resources\survey-icon-20 blue.png" />
     <None Include="Resources\survey-icon-20.png" />
+    <None Include="Resources\sm_full.gif" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\giphy1.gif" />
+    <None Include="Resources\giphy2.gif" />
+    <None Include="Resources\giphy11.gif" />
+    <None Include="Resources\movi0e.gif" />
+    <None Include="Resources\movi0e1.gif" />
+    <None Include="Resources\movi2e.gif" />
+    <None Include="Resources\SpryGrotesqueIvorybilledwoodpecker-size_restricted.gif" />
+    <None Include="Resources\SilverMistyIvorygull.gif" />
+    <None Include="Resources\tumblr_p3qjabk8Xc1qzm8dwo1_400.gif" />
     <Content Include="Resources\view-details-20 blue.png" />
     <None Include="Resources\view-details-20 blue1.png" />
     <Content Include="xsell_eM2_icon.ico" />

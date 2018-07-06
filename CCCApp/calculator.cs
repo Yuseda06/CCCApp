@@ -55,44 +55,44 @@ namespace CCCApp
                     lblDAIInterest.Text = "2.50%";
                     lblDAImin.Text = "Min RM500";
                     lblDAITenure.Text = "6";
-                    lblDAITotalInterest.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) * 2.50 / 100).ToString("#.##") + "";
+                    lblDAITotalInterest.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) * 2.50 / 100).ToString("#.##") + "";
                     desc = desc1;
                     displayNotif();
-                    lblTotalInterestDAI.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 2.50 / 100).ToString("#.##") + "";
-                    lblDAIMonthly.Text = "RM " + (((Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 2.50 / 100)) / Convert.ToInt32(lblDAITenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestDAI.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 2.50 / 100).ToString("#.##") + "";
+                    lblDAIMonthly.Text = "RM " + (((Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 2.50 / 100)) / Convert.ToDouble(lblDAITenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbDAI.Text == "PLAN B")
                 {
-                    lblDAIInterest.Text = "12.00%";
+                    lblDAIInterest.Text = "5.00%";
                     lblDAImin.Text = "Min RM1000";
                     lblDAITenure.Text = "12";
-                    lblDAITotalInterest.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) * 12 / 100).ToString("#.##") + "";
+                    lblDAITotalInterest.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) * 5 / 100).ToString("#.##") + "";
                     desc = desc1;
                     displayNotif();
-                    lblTotalInterestDAI.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 12 / 100).ToString("#.##") + "";
-                    lblDAIMonthly.Text = "RM " + (((Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 12 / 100)) / Convert.ToInt32(lblDAITenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestDAI.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 5 / 100).ToString("#.##") + "";
+                    lblDAIMonthly.Text = "RM " + (((Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 5 / 100)) / Convert.ToDouble(lblDAITenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbDAI.Text == "PLAN C")
                 {
                     lblDAIInterest.Text = "9.00%";
                     lblDAImin.Text = "Min RM1000";
                     lblDAITenure.Text = "18";
-                    lblDAITotalInterest.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) * 9 / 100).ToString("#.##") + "";
+                    lblDAITotalInterest.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) * 9 / 100).ToString("#.##") + "";
                     desc = desc1;
                     displayNotif();
-                    lblTotalInterestDAI.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 9 / 100).ToString("#.##") + "";
-                    lblDAIMonthly.Text = "RM " + (((Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 9 / 100)) / Convert.ToInt32(lblDAITenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestDAI.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 9 / 100).ToString("#.##") + "";
+                    lblDAIMonthly.Text = "RM " + (((Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 9 / 100)) / Convert.ToDouble(lblDAITenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbDAI.Text == "PLAN D")
                 {
-                    lblDAIInterest.Text = "15.00%";
+                    lblDAIInterest.Text = "17.50%";
                     lblDAImin.Text = "Min RM2000";
                     lblDAITenure.Text = "24"; 
-                    lblDAITotalInterest.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) * 15/ 100).ToString("#.##") + "";
+                    lblDAITotalInterest.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) * 17.5/ 100).ToString("#.##") + "";
                     desc = desc1;
                     displayNotif();
-                    lblTotalInterestDAI.Text = "RM " + (Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 15 / 100).ToString("#.##") + "";
-                    lblDAIMonthly.Text = "RM " + (((Convert.ToInt32(txtDAIAmount.Text) + Convert.ToInt32(txtDAIAmount.Text) * 15 / 100)) / Convert.ToInt32(lblDAITenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestDAI.Text = "RM " + (Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 17.5 / 100).ToString("#.##") + "";
+                    lblDAIMonthly.Text = "RM " + (((Convert.ToDouble(txtDAIAmount.Text) + Convert.ToDouble(txtDAIAmount.Text) * 17.5 / 100)) / Convert.ToDouble(lblDAITenure.Text)).ToString("#.##") + "";
                 }
                 i = 1;
             }
@@ -113,44 +113,44 @@ namespace CCCApp
                     lblBTInterest.Text = "4.00%";
                     lblBTmin.Text = text1;
                     lblBTTenure.Text = "12";
-                    lblBTTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) * 4 / 100).ToString("#.##") + "";
+                    lblBTTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) * 4 / 100).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
-                    lblTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 4 / 100).ToString("#.##") + "";
-                    lblBTMonthly.Text = "RM " + (((Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 4 / 100)) / Convert.ToInt32(lblBTTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 4 / 100).ToString("#.##") + "";
+                    lblBTMonthly.Text = "RM " + (((Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 4 / 100)) / Convert.ToDouble(lblBTTenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbBT.Text == "PLAN B")
                 {
                     lblBTInterest.Text = "7.00%";
                     lblBTmin.Text = text1;
                     lblBTTenure.Text = "18";
-                    lblBTTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) * 7 / 100).ToString("#.##") + "";
+                    lblBTTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) * 7 / 100).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
-                    lblTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 7 / 100).ToString("#.##") + "";
-                    lblBTMonthly.Text = "RM " + (((Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 7 / 100)) / Convert.ToInt32(lblBTTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 7 / 100).ToString("#.##") + "";
+                    lblBTMonthly.Text = "RM " + (((Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 7 / 100)) / Convert.ToDouble(lblBTTenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbBT.Text == "PLAN C")
                 {
                     lblBTInterest.Text = "10.99%";
                     lblBTmin.Text = text1;
                     lblBTTenure.Text = "24";
-                    lblBTTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) * 10.99 / 100).ToString("#.##") + "";
+                    lblBTTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) * 10.99 / 100).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
-                    lblTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 10.99 / 100).ToString("#.##") + "";
-                    lblBTMonthly.Text = "RM " + (((Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 10.99 / 100)) / Convert.ToInt32(lblBTTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 10.99 / 100).ToString("#.##") + "";
+                    lblBTMonthly.Text = "RM " + (((Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 10.99 / 100)) / Convert.ToDouble(lblBTTenure.Text)).ToString("#.##") + "";
                 }
                 else if (cbBT.Text == "PLAN 631")
                 {
                     lblBTInterest.Text = "2.99%";
                     lblBTmin.Text = text3;
                     lblBTTenure.Text = "6";
-                    lblBTTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) * 2.99 / 100).ToString("#.##") + "";
+                    lblBTTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) * 2.99 / 100).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
-                    lblTotalInterest.Text = "RM " + (Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 2.99 / 100).ToString("#.##") + "";
-                    lblBTMonthly.Text = "RM " + (((Convert.ToInt32(txtBTAmount.Text) + Convert.ToInt32(txtBTAmount.Text) * 2.99 / 100)) / Convert.ToInt32(lblBTTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterest.Text = "RM " + (Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 2.99 / 100).ToString("#.##") + "";
+                    lblBTMonthly.Text = "RM " + (((Convert.ToDouble(txtBTAmount.Text) + Convert.ToDouble(txtBTAmount.Text) * 2.99 / 100)) / Convert.ToDouble(lblBTTenure.Text)).ToString("#.##") + "";
                 }
             }
             catch (Exception)
@@ -172,10 +172,10 @@ namespace CCCApp
 
                     lblCXInterest.Text = "8.00%";
                     lblCXTenure.Text = "12";
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 8 / 100).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 8 / 100).ToString("#.##") + "";
                     lblCXmin.Text = text1;
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 8 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 8 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 8 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 8 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
                 }
@@ -183,10 +183,10 @@ namespace CCCApp
                 {
                     lblCXInterest.Text = "18.00%";
                     lblCXTenure.Text = "24";
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 18 / 100).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 18 / 100).ToString("#.##") + "";
                     lblCXmin.Text = text1;
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 18 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 18 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 18 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 18 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
 
@@ -197,11 +197,11 @@ namespace CCCApp
                     lblCXInterest.Text = "4.88%";
                     lblCXTenure.Text = "12";
                     lblCXmin.Text = text3;
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 4.88 / 100).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 4.88 / 100).ToString("#.##") + "";
                     desc = "";
                     displayNotif();
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 4.88 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 4.88 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 4.88 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 4.88 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                 }
 
                 else if (cbCX.Text == "PLAN 633")
@@ -212,9 +212,9 @@ namespace CCCApp
                     lblCXmin.Text = text3;
                     displayNotif();
                     lblCXTenure.Text = "12";
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 3.99 / 100).ToString("#.##") + "";
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 3.99 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 3.99 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 3.99 / 100).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 3.99 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 3.99 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                 }
 
                 else if (cbCX.Text == "PLAN 634")
@@ -225,9 +225,9 @@ namespace CCCApp
                     lblCXmin.Text = text3;
                     displayNotif();
                     lblCXTenure.Text = "12";
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 2.99 / 100).ToString("#.##") + "";
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 2.99 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 2.99 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 2.99 / 100).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 2.99 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 2.99 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                 }
 
                 else if (cbCX.Text == "PLAN 693")
@@ -238,9 +238,9 @@ namespace CCCApp
                     displayNotif();
                     lblCXmin.Text = text3;
                     lblCXTenure.Text = "24";
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 7.88 / 100).ToString("#.##") + "";
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 7.88 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 7.88 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 7.88 / 100).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 7.88 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 7.88 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                 }
 
                 else if (cbCX.Text == "PLAN 694")
@@ -250,9 +250,9 @@ namespace CCCApp
                     desc = "";
                     displayNotif();
                     lblCXmin.Text = text3;
-                    lblCXTotalInterest.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) * 9.88 / 100).ToString("#.##") + "";
-                    lblTotalInterestCX.Text = "RM " + (Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 9.88 / 100).ToString("#.##") + "";
-                    lblCXMonthly.Text = "RM " + (((Convert.ToInt32(txtCXAmount.Text) + Convert.ToInt32(txtCXAmount.Text) * 9.88 / 100)) / Convert.ToInt32(lblCXTenure.Text)).ToString("#.##") + "";
+                    lblCXTotalInterest.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) * 9.88 / 100).ToString("#.##") + "";
+                    lblTotalInterestCX.Text = "RM " + (Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 9.88 / 100).ToString("#.##") + "";
+                    lblCXMonthly.Text = "RM " + (((Convert.ToDouble(txtCXAmount.Text) + Convert.ToDouble(txtCXAmount.Text) * 9.88 / 100)) / Convert.ToDouble(lblCXTenure.Text)).ToString("#.##") + "";
                 }
 
             }

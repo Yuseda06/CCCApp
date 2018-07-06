@@ -59,6 +59,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelIBK = new System.Windows.Forms.Panel();
+            this.cbForgotOther = new System.Windows.Forms.CheckBox();
+            this.cbForgot3 = new System.Windows.Forms.CheckBox();
+            this.cbForgot2 = new System.Windows.Forms.CheckBox();
+            this.cbForgot1 = new System.Windows.Forms.CheckBox();
             this.btnIBK = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtIBKReason = new System.Windows.Forms.TextBox();
@@ -75,6 +79,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelReflex = new System.Windows.Forms.Panel();
+            this.cbREF10 = new System.Windows.Forms.CheckBox();
+            this.cbREF11 = new System.Windows.Forms.CheckBox();
+            this.cbREF9 = new System.Windows.Forms.CheckBox();
+            this.cbREF8 = new System.Windows.Forms.CheckBox();
+            this.cbREF4 = new System.Windows.Forms.CheckBox();
+            this.cbREF7 = new System.Windows.Forms.CheckBox();
+            this.cbREF6 = new System.Windows.Forms.CheckBox();
+            this.cbREF5 = new System.Windows.Forms.CheckBox();
             this.cbREF3 = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnReflex = new System.Windows.Forms.Button();
@@ -90,18 +102,6 @@
             this.txtRefLegalID = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.cbForgot1 = new System.Windows.Forms.CheckBox();
-            this.cbForgot2 = new System.Windows.Forms.CheckBox();
-            this.cbForgot3 = new System.Windows.Forms.CheckBox();
-            this.cbForgotOther = new System.Windows.Forms.CheckBox();
-            this.cbREF7 = new System.Windows.Forms.CheckBox();
-            this.cbREF6 = new System.Windows.Forms.CheckBox();
-            this.cbREF5 = new System.Windows.Forms.CheckBox();
-            this.cbREF8 = new System.Windows.Forms.CheckBox();
-            this.cbREF4 = new System.Windows.Forms.CheckBox();
-            this.cbREF9 = new System.Windows.Forms.CheckBox();
-            this.cbREF11 = new System.Windows.Forms.CheckBox();
-            this.cbREF10 = new System.Windows.Forms.CheckBox();
             this.panelCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -126,6 +126,7 @@
             // 
             // lblCustomer
             // 
+            this.lblCustomer.AutoEllipsis = true;
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.Location = new System.Drawing.Point(3, 64);
@@ -157,6 +158,7 @@
             // 
             // lblIBK
             // 
+            this.lblIBK.AutoEllipsis = true;
             this.lblIBK.AutoSize = true;
             this.lblIBK.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIBK.Location = new System.Drawing.Point(113, 64);
@@ -179,6 +181,7 @@
             // 
             // lblReflex
             // 
+            this.lblReflex.AutoEllipsis = true;
             this.lblReflex.AutoSize = true;
             this.lblReflex.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReflex.Location = new System.Drawing.Point(215, 64);
@@ -247,10 +250,11 @@
             // cbOtherThanBal
             // 
             this.cbOtherThanBal.AutoSize = true;
+            this.cbOtherThanBal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbOtherThanBal.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbOtherThanBal.Location = new System.Drawing.Point(49, 167);
             this.cbOtherThanBal.Name = "cbOtherThanBal";
-            this.cbOtherThanBal.Size = new System.Drawing.Size(204, 17);
+            this.cbOtherThanBal.Size = new System.Drawing.Size(202, 17);
             this.cbOtherThanBal.TabIndex = 31;
             this.cbOtherThanBal.Text = "No, customer did ask few other things";
             this.cbOtherThanBal.UseVisualStyleBackColor = true;
@@ -259,10 +263,11 @@
             // cbCheckBalOnly
             // 
             this.cbCheckBalOnly.AutoSize = true;
+            this.cbCheckBalOnly.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCheckBalOnly.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbCheckBalOnly.Location = new System.Drawing.Point(49, 152);
             this.cbCheckBalOnly.Name = "cbCheckBalOnly";
-            this.cbCheckBalOnly.Size = new System.Drawing.Size(162, 17);
+            this.cbCheckBalOnly.Size = new System.Drawing.Size(160, 17);
             this.cbCheckBalOnly.TabIndex = 30;
             this.cbCheckBalOnly.Text = "Yes, checking balances only";
             this.cbCheckBalOnly.UseVisualStyleBackColor = true;
@@ -290,10 +295,11 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
+            this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox5.Location = new System.Drawing.Point(49, 318);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(52, 17);
+            this.checkBox5.Size = new System.Drawing.Size(50, 17);
             this.checkBox5.TabIndex = 18;
             this.checkBox5.Text = "Other";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -301,10 +307,11 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
+            this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox6.Location = new System.Drawing.Point(288, 303);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(272, 17);
+            this.checkBox6.Size = new System.Drawing.Size(270, 17);
             this.checkBox6.TabIndex = 17;
             this.checkBox6.Text = "I\'m not sure whether I have registered the RHB Now";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -312,10 +319,11 @@
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
+            this.checkBox8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox8.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox8.Location = new System.Drawing.Point(49, 303);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(185, 17);
+            this.checkBox8.Size = new System.Drawing.Size(183, 17);
             this.checkBox8.TabIndex = 15;
             this.checkBox8.Text = "I \'m driving, prefer talking to agent";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -323,10 +331,11 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
+            this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox4.Location = new System.Drawing.Point(288, 288);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(149, 17);
+            this.checkBox4.Size = new System.Drawing.Size(147, 17);
             this.checkBox4.TabIndex = 14;
             this.checkBox4.Text = "I don\'t have a smartphone";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -334,10 +343,11 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
+            this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox3.Location = new System.Drawing.Point(288, 273);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(230, 17);
+            this.checkBox3.Size = new System.Drawing.Size(228, 17);
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "I could not find where is the balance inquiry";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -345,10 +355,11 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox2.Location = new System.Drawing.Point(49, 288);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(143, 17);
+            this.checkBox2.Size = new System.Drawing.Size(141, 17);
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "To save my internet data";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -356,10 +367,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.checkBox1.Location = new System.Drawing.Point(49, 273);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(170, 17);
+            this.checkBox1.Size = new System.Drawing.Size(168, 17);
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "RHB Now is not a user friendly";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -465,8 +477,61 @@
             this.panelIBK.TabIndex = 32;
             this.panelIBK.Visible = false;
             // 
+            // cbForgotOther
+            // 
+            this.cbForgotOther.AutoEllipsis = true;
+            this.cbForgotOther.AutoSize = true;
+            this.cbForgotOther.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbForgotOther.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbForgotOther.Location = new System.Drawing.Point(288, 221);
+            this.cbForgotOther.Name = "cbForgotOther";
+            this.cbForgotOther.Size = new System.Drawing.Size(50, 17);
+            this.cbForgotOther.TabIndex = 38;
+            this.cbForgotOther.Text = "Other";
+            this.cbForgotOther.UseVisualStyleBackColor = true;
+            // 
+            // cbForgot3
+            // 
+            this.cbForgot3.AutoEllipsis = true;
+            this.cbForgot3.AutoSize = true;
+            this.cbForgot3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbForgot3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbForgot3.Location = new System.Drawing.Point(288, 198);
+            this.cbForgot3.Name = "cbForgot3";
+            this.cbForgot3.Size = new System.Drawing.Size(183, 17);
+            this.cbForgot3.TabIndex = 37;
+            this.cbForgot3.Text = "I prefer the agent to reset it for me";
+            this.cbForgot3.UseVisualStyleBackColor = true;
+            // 
+            // cbForgot2
+            // 
+            this.cbForgot2.AutoEllipsis = true;
+            this.cbForgot2.AutoSize = true;
+            this.cbForgot2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbForgot2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbForgot2.Location = new System.Drawing.Point(288, 177);
+            this.cbForgot2.Name = "cbForgot2";
+            this.cbForgot2.Size = new System.Drawing.Size(229, 17);
+            this.cbForgot2.TabIndex = 36;
+            this.cbForgot2.Text = "I got the error message to call 03-92068118";
+            this.cbForgot2.UseVisualStyleBackColor = true;
+            // 
+            // cbForgot1
+            // 
+            this.cbForgot1.AutoEllipsis = true;
+            this.cbForgot1.AutoSize = true;
+            this.cbForgot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbForgot1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbForgot1.Location = new System.Drawing.Point(288, 155);
+            this.cbForgot1.Name = "cbForgot1";
+            this.cbForgot1.Size = new System.Drawing.Size(187, 17);
+            this.cbForgot1.TabIndex = 35;
+            this.cbForgot1.Text = "I did\'nt know you have that option ";
+            this.cbForgot1.UseVisualStyleBackColor = true;
+            // 
             // btnIBK
             // 
+            this.btnIBK.AutoEllipsis = true;
             this.btnIBK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnIBK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnIBK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -513,11 +578,13 @@
             // 
             // cbIDBlocked
             // 
+            this.cbIDBlocked.AutoEllipsis = true;
             this.cbIDBlocked.AutoSize = true;
+            this.cbIDBlocked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbIDBlocked.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbIDBlocked.Location = new System.Drawing.Point(49, 175);
             this.cbIDBlocked.Name = "cbIDBlocked";
-            this.cbIDBlocked.Size = new System.Drawing.Size(78, 17);
+            this.cbIDBlocked.Size = new System.Drawing.Size(76, 17);
             this.cbIDBlocked.TabIndex = 31;
             this.cbIDBlocked.Text = "ID blocked";
             this.cbIDBlocked.UseVisualStyleBackColor = true;
@@ -525,11 +592,13 @@
             // 
             // cbForgotPassword
             // 
+            this.cbForgotPassword.AutoEllipsis = true;
             this.cbForgotPassword.AutoSize = true;
+            this.cbForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbForgotPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbForgotPassword.Location = new System.Drawing.Point(49, 152);
             this.cbForgotPassword.Name = "cbForgotPassword";
-            this.cbForgotPassword.Size = new System.Drawing.Size(108, 17);
+            this.cbForgotPassword.Size = new System.Drawing.Size(106, 17);
             this.cbForgotPassword.TabIndex = 30;
             this.cbForgotPassword.Text = "Forgot Password ";
             this.cbForgotPassword.UseVisualStyleBackColor = true;
@@ -549,11 +618,13 @@
             // 
             // cbMBK
             // 
+            this.cbMBK.AutoEllipsis = true;
             this.cbMBK.AutoSize = true;
+            this.cbMBK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbMBK.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbMBK.Location = new System.Drawing.Point(288, 311);
             this.cbMBK.Name = "cbMBK";
-            this.cbMBK.Size = new System.Drawing.Size(99, 17);
+            this.cbMBK.Size = new System.Drawing.Size(97, 17);
             this.cbMBK.TabIndex = 13;
             this.cbMBK.Text = "Mobile Banking";
             this.cbMBK.UseVisualStyleBackColor = true;
@@ -561,11 +632,13 @@
             // 
             // cbIBK
             // 
+            this.cbIBK.AutoEllipsis = true;
             this.cbIBK.AutoSize = true;
+            this.cbIBK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbIBK.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbIBK.Location = new System.Drawing.Point(49, 311);
             this.cbIBK.Name = "cbIBK";
-            this.cbIBK.Size = new System.Drawing.Size(104, 17);
+            this.cbIBK.Size = new System.Drawing.Size(102, 17);
             this.cbIBK.TabIndex = 11;
             this.cbIBK.Text = "Internet Banking";
             this.cbIBK.UseVisualStyleBackColor = true;
@@ -659,13 +732,119 @@
             this.panelReflex.TabIndex = 37;
             this.panelReflex.Visible = false;
             // 
+            // cbREF10
+            // 
+            this.cbREF10.AutoEllipsis = true;
+            this.cbREF10.AutoSize = true;
+            this.cbREF10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF10.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF10.Location = new System.Drawing.Point(408, 227);
+            this.cbREF10.Name = "cbREF10";
+            this.cbREF10.Size = new System.Drawing.Size(162, 17);
+            this.cbREF10.TabIndex = 48;
+            this.cbREF10.Text = "Guide to apply Reflex service";
+            this.cbREF10.UseVisualStyleBackColor = true;
+            // 
+            // cbREF11
+            // 
+            this.cbREF11.AutoEllipsis = true;
+            this.cbREF11.AutoSize = true;
+            this.cbREF11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF11.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF11.Location = new System.Drawing.Point(408, 250);
+            this.cbREF11.Name = "cbREF11";
+            this.cbREF11.Size = new System.Drawing.Size(50, 17);
+            this.cbREF11.TabIndex = 47;
+            this.cbREF11.Text = "Other";
+            this.cbREF11.UseVisualStyleBackColor = true;
+            // 
+            // cbREF9
+            // 
+            this.cbREF9.AutoEllipsis = true;
+            this.cbREF9.AutoSize = true;
+            this.cbREF9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF9.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF9.Location = new System.Drawing.Point(408, 204);
+            this.cbREF9.Name = "cbREF9";
+            this.cbREF9.Size = new System.Drawing.Size(174, 17);
+            this.cbREF9.TabIndex = 46;
+            this.cbREF9.Text = "Perform setting by system admin";
+            this.cbREF9.UseVisualStyleBackColor = true;
+            // 
+            // cbREF8
+            // 
+            this.cbREF8.AutoEllipsis = true;
+            this.cbREF8.AutoSize = true;
+            this.cbREF8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF8.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF8.Location = new System.Drawing.Point(214, 273);
+            this.cbREF8.Name = "cbREF8";
+            this.cbREF8.Size = new System.Drawing.Size(55, 17);
+            this.cbREF8.TabIndex = 45;
+            this.cbREF8.Text = "Payroll";
+            this.cbREF8.UseVisualStyleBackColor = true;
+            // 
+            // cbREF4
+            // 
+            this.cbREF4.AutoEllipsis = true;
+            this.cbREF4.AutoSize = true;
+            this.cbREF4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF4.Location = new System.Drawing.Point(47, 273);
+            this.cbREF4.Name = "cbREF4";
+            this.cbREF4.Size = new System.Drawing.Size(64, 17);
+            this.cbREF4.TabIndex = 44;
+            this.cbREF4.Text = "SOCSO ";
+            this.cbREF4.UseVisualStyleBackColor = true;
+            // 
+            // cbREF7
+            // 
+            this.cbREF7.AutoEllipsis = true;
+            this.cbREF7.AutoSize = true;
+            this.cbREF7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF7.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF7.Location = new System.Drawing.Point(214, 250);
+            this.cbREF7.Name = "cbREF7";
+            this.cbREF7.Size = new System.Drawing.Size(44, 17);
+            this.cbREF7.TabIndex = 43;
+            this.cbREF7.Text = "EPF";
+            this.cbREF7.UseVisualStyleBackColor = true;
+            // 
+            // cbREF6
+            // 
+            this.cbREF6.AutoEllipsis = true;
+            this.cbREF6.AutoSize = true;
+            this.cbREF6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF6.Location = new System.Drawing.Point(214, 227);
+            this.cbREF6.Name = "cbREF6";
+            this.cbREF6.Size = new System.Drawing.Size(98, 17);
+            this.cbREF6.TabIndex = 42;
+            this.cbREF6.Text = "Reject Reason ";
+            this.cbREF6.UseVisualStyleBackColor = true;
+            // 
+            // cbREF5
+            // 
+            this.cbREF5.AutoEllipsis = true;
+            this.cbREF5.AutoSize = true;
+            this.cbREF5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbREF5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbREF5.Location = new System.Drawing.Point(214, 204);
+            this.cbREF5.Name = "cbREF5";
+            this.cbREF5.Size = new System.Drawing.Size(164, 17);
+            this.cbREF5.TabIndex = 41;
+            this.cbREF5.Text = "Token faulty or Replacement ";
+            this.cbREF5.UseVisualStyleBackColor = true;
+            // 
             // cbREF3
             // 
+            this.cbREF3.AutoEllipsis = true;
             this.cbREF3.AutoSize = true;
+            this.cbREF3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbREF3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbREF3.Location = new System.Drawing.Point(47, 250);
             this.cbREF3.Name = "cbREF3";
-            this.cbREF3.Size = new System.Drawing.Size(95, 17);
+            this.cbREF3.Size = new System.Drawing.Size(93, 17);
             this.cbREF3.TabIndex = 40;
             this.cbREF3.Text = "Fund Transfer ";
             this.cbREF3.UseVisualStyleBackColor = true;
@@ -699,22 +878,26 @@
             // 
             // cbREF2
             // 
+            this.cbREF2.AutoEllipsis = true;
             this.cbREF2.AutoSize = true;
+            this.cbREF2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbREF2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbREF2.Location = new System.Drawing.Point(47, 227);
             this.cbREF2.Name = "cbREF2";
-            this.cbREF2.Size = new System.Drawing.Size(86, 17);
+            this.cbREF2.Size = new System.Drawing.Size(84, 17);
             this.cbREF2.TabIndex = 31;
             this.cbREF2.Text = "INQ:AC Stmt";
             this.cbREF2.UseVisualStyleBackColor = true;
             // 
             // cbREF1
             // 
+            this.cbREF1.AutoEllipsis = true;
             this.cbREF1.AutoSize = true;
+            this.cbREF1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbREF1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbREF1.Location = new System.Drawing.Point(47, 204);
             this.cbREF1.Name = "cbREF1";
-            this.cbREF1.Size = new System.Drawing.Size(78, 17);
+            this.cbREF1.Size = new System.Drawing.Size(76, 17);
             this.cbREF1.TabIndex = 30;
             this.cbREF1.Text = "User Lock ";
             this.cbREF1.UseVisualStyleBackColor = true;
@@ -819,142 +1002,9 @@
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             // 
-            // cbForgot1
-            // 
-            this.cbForgot1.AutoSize = true;
-            this.cbForgot1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbForgot1.Location = new System.Drawing.Point(288, 155);
-            this.cbForgot1.Name = "cbForgot1";
-            this.cbForgot1.Size = new System.Drawing.Size(189, 17);
-            this.cbForgot1.TabIndex = 35;
-            this.cbForgot1.Text = "I did\'nt know you have that option ";
-            this.cbForgot1.UseVisualStyleBackColor = true;
-            // 
-            // cbForgot2
-            // 
-            this.cbForgot2.AutoSize = true;
-            this.cbForgot2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbForgot2.Location = new System.Drawing.Point(288, 177);
-            this.cbForgot2.Name = "cbForgot2";
-            this.cbForgot2.Size = new System.Drawing.Size(231, 17);
-            this.cbForgot2.TabIndex = 36;
-            this.cbForgot2.Text = "I got the error message to call 03-92068118";
-            this.cbForgot2.UseVisualStyleBackColor = true;
-            // 
-            // cbForgot3
-            // 
-            this.cbForgot3.AutoSize = true;
-            this.cbForgot3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbForgot3.Location = new System.Drawing.Point(288, 198);
-            this.cbForgot3.Name = "cbForgot3";
-            this.cbForgot3.Size = new System.Drawing.Size(185, 17);
-            this.cbForgot3.TabIndex = 37;
-            this.cbForgot3.Text = "I prefer the agent to reset it for me";
-            this.cbForgot3.UseVisualStyleBackColor = true;
-            // 
-            // cbForgotOther
-            // 
-            this.cbForgotOther.AutoSize = true;
-            this.cbForgotOther.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbForgotOther.Location = new System.Drawing.Point(288, 221);
-            this.cbForgotOther.Name = "cbForgotOther";
-            this.cbForgotOther.Size = new System.Drawing.Size(52, 17);
-            this.cbForgotOther.TabIndex = 38;
-            this.cbForgotOther.Text = "Other";
-            this.cbForgotOther.UseVisualStyleBackColor = true;
-            // 
-            // cbREF7
-            // 
-            this.cbREF7.AutoSize = true;
-            this.cbREF7.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF7.Location = new System.Drawing.Point(214, 250);
-            this.cbREF7.Name = "cbREF7";
-            this.cbREF7.Size = new System.Drawing.Size(46, 17);
-            this.cbREF7.TabIndex = 43;
-            this.cbREF7.Text = "EPF";
-            this.cbREF7.UseVisualStyleBackColor = true;
-            // 
-            // cbREF6
-            // 
-            this.cbREF6.AutoSize = true;
-            this.cbREF6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF6.Location = new System.Drawing.Point(214, 227);
-            this.cbREF6.Name = "cbREF6";
-            this.cbREF6.Size = new System.Drawing.Size(100, 17);
-            this.cbREF6.TabIndex = 42;
-            this.cbREF6.Text = "Reject Reason ";
-            this.cbREF6.UseVisualStyleBackColor = true;
-            // 
-            // cbREF5
-            // 
-            this.cbREF5.AutoSize = true;
-            this.cbREF5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF5.Location = new System.Drawing.Point(214, 204);
-            this.cbREF5.Name = "cbREF5";
-            this.cbREF5.Size = new System.Drawing.Size(166, 17);
-            this.cbREF5.TabIndex = 41;
-            this.cbREF5.Text = "Token faulty or Replacement ";
-            this.cbREF5.UseVisualStyleBackColor = true;
-            // 
-            // cbREF8
-            // 
-            this.cbREF8.AutoSize = true;
-            this.cbREF8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF8.Location = new System.Drawing.Point(214, 273);
-            this.cbREF8.Name = "cbREF8";
-            this.cbREF8.Size = new System.Drawing.Size(57, 17);
-            this.cbREF8.TabIndex = 45;
-            this.cbREF8.Text = "Payroll";
-            this.cbREF8.UseVisualStyleBackColor = true;
-            // 
-            // cbREF4
-            // 
-            this.cbREF4.AutoSize = true;
-            this.cbREF4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF4.Location = new System.Drawing.Point(47, 273);
-            this.cbREF4.Name = "cbREF4";
-            this.cbREF4.Size = new System.Drawing.Size(66, 17);
-            this.cbREF4.TabIndex = 44;
-            this.cbREF4.Text = "SOCSO ";
-            this.cbREF4.UseVisualStyleBackColor = true;
-            // 
-            // cbREF9
-            // 
-            this.cbREF9.AutoSize = true;
-            this.cbREF9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF9.Location = new System.Drawing.Point(408, 204);
-            this.cbREF9.Name = "cbREF9";
-            this.cbREF9.Size = new System.Drawing.Size(176, 17);
-            this.cbREF9.TabIndex = 46;
-            this.cbREF9.Text = "Perform setting by system admin";
-            this.cbREF9.UseVisualStyleBackColor = true;
-            // 
-            // cbREF11
-            // 
-            this.cbREF11.AutoSize = true;
-            this.cbREF11.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF11.Location = new System.Drawing.Point(408, 250);
-            this.cbREF11.Name = "cbREF11";
-            this.cbREF11.Size = new System.Drawing.Size(52, 17);
-            this.cbREF11.TabIndex = 47;
-            this.cbREF11.Text = "Other";
-            this.cbREF11.UseVisualStyleBackColor = true;
-            // 
-            // cbREF10
-            // 
-            this.cbREF10.AutoSize = true;
-            this.cbREF10.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbREF10.Location = new System.Drawing.Point(408, 227);
-            this.cbREF10.Name = "cbREF10";
-            this.cbREF10.Size = new System.Drawing.Size(164, 17);
-            this.cbREF10.TabIndex = 48;
-            this.cbREF10.Text = "Guide to apply Reflex service";
-            this.cbREF10.UseVisualStyleBackColor = true;
-            // 
             // survey
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lineReflex);

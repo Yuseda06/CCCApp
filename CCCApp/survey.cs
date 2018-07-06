@@ -22,8 +22,9 @@ namespace CCCApp
         string reasonCallingCCC;
 
 
-        //int staffID = 179264;
-        int staffID = Convert.ToInt32(Environment.UserName);
+
+        int staffID = 179264;
+        //int staffID = Convert.ToInt32(Environment.UserName);
 
         void reset()
         {
@@ -131,7 +132,7 @@ namespace CCCApp
         {
             Button button = sender as Button;
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\SURVEY.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "SURVEY.mdb;"))
             
             try
                 {
@@ -311,12 +312,25 @@ namespace CCCApp
                 
                 }
         }
+
+        string ConnString;
         public survey()
         {
             InitializeComponent();
             lineCC.BackColor = Color.DeepSkyBlue;
             lineIBK.BackColor = Color.Silver;
             lineReflex.BackColor = Color.Silver;
+
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+
+                ConnString = "";
+            }
+
         }
 
         void enterLeave(object sender, EventArgs e)

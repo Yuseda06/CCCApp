@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Globalization;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 
 
@@ -33,6 +34,53 @@ namespace CCCApp
         bool check = true;
         bool isCSA;
         string MMM;
+        string ConnString;
+        OleDbCommand command;
+        string subject, mailTos, mailReason;
+        string apo = "'";
+
+        private void CreateMailItem(object sender, EventArgs e)
+        {
+            //MessageBox.Show(name);
+            Button btn = sender as Button;
+
+            if (btn.Text == "Approved" || btn.Text == "Declined")
+            {
+                subject = "Your Manual Add on has been " + btn.Text + "";
+                mailTos = txtNameList.Text;
+                mailReason = txtReason.Text;
+
+            }
+            else
+            {
+                subject = "Manual Add On Request";
+                mailTos = "CCC Team Manager";
+                mailReason = remarks;
+            }
+
+
+            string body = "Name : " + txtName.Text +
+            Environment.NewLine + "<br />  From: \n" + fTime +
+            Environment.NewLine + "<br /> To: " + tTime +
+            Environment.NewLine + "<br />  Login Hour: " + loginHours +
+            Environment.NewLine + "<br />  Not Ready: " + notReady +
+            Environment.NewLine + "<br /> Discounted: " + aht + inbound + discount +
+            Environment.NewLine + "<br />  Remarks: " + mailReason +
+            Environment.NewLine + "<br />  Date: " + dates +
+            Environment.NewLine +
+            Environment.NewLine + "<br /> <br />  <a href=\'\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\(BTCX FORM)\\CCCApp.lnk'> Open the CCCApp for more details</a>";
+
+            Outlook.Application app = new Outlook.Application();
+            Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
+            mailItem.Subject = subject;
+            mailItem.To = mailTos;
+            mailItem.HTMLBody = body;
+            //mailItem.Attachments.Add(logPath);//logPath is a string holding path to the log.txt file
+            //mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
+            mailItem.Send();
+
+
+        }
 
         private void manualAdd_Load(object sender, EventArgs e)
         {
@@ -41,14 +89,26 @@ namespace CCCApp
             txtName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtName.AutoCompleteMode = AutoCompleteMode.Suggest;
 
-            intStaffID = Convert.ToInt32(Environment.UserName);
-            strStaffID = Environment.UserName.ToString();
 
+            if (Environment.UserName.ToString() == "Yusri")
+            {
+                strStaffID = "19333";
+                intStaffID = 19333;
+            }
+            else
+            {
+                intStaffID = Convert.ToInt32(Environment.UserName);
+                strStaffID = Environment.UserName.ToString();
+            }
 
-            //uncomment below for testing
-
-            //strStaffID = "194446";
-            //intStaffID = 194446;
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
 
 
 
@@ -74,6 +134,7 @@ namespace CCCApp
                     cbPending.Checked = true;
                     cbApproved.Checked = true;
                     cbDeclined.Checked = true;
+                    cbMIS.Checked = true;
 
                     btnRemove.BackColor = Color.Red;
                     btnApprove.Visible = true;
@@ -91,12 +152,13 @@ namespace CCCApp
             }
 
         }
-        
+
         String[] GetList(string s)
         {
-            string connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0; HDR = YES;\"";
+            string connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb";
             OleDbConnection conn = new OleDbConnection(connstr);
-            string cmd = "Select `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$`";
+
+            string cmd = "Select WFM FROM  " + MMM + "";
             OleDbDataAdapter da = new OleDbDataAdapter(cmd, conn);
             DataSet ds = new DataSet();
 
@@ -152,26 +214,55 @@ namespace CCCApp
                 check = true;
         }
 
+        bool isMIS;
+        int intStaff;
+        string strStaff;
+
         public manualAdd()
         {
 
             InitializeComponent();
 
+
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
+
+
             try
             {
                 MMM = DateTime.Now.ToString("MMM").Replace('-', '/');
                 //strStaffID = agentList(intStaffID);
-                
+
             }
             catch (Exception)
             {
                 MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
             }
 
-            //if (strStaffID == null)
-            //{
-            //    MMM = DateTime.Now.AddMonths(-1).ToString("MMM").Replace('-', '/');
-            //}
+
+
+            try
+            {
+                intStaff = Convert.ToInt32(Environment.UserName);
+
+            }
+            catch (Exception)
+            {
+                strStaff = Environment.UserName.ToString();
+            }
+
+            if (intStaff == 179264 || intStaff == 179494 || intStaff == 183813 || strStaff == "Yusri")
+            {
+                isMIS = true;
+                btnAdjust.Visible = true;
+                cbMIS.Visible = true;
+            }
 
 
 
@@ -193,18 +284,19 @@ namespace CCCApp
             }
         }
         string StatusManual, StatusManual1, StatusManual2;
+        int MISManual;
 
         private void Check(object sender, EventArgs e)
         {
-            
+
             OleDbCommand command;
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
             {
-                
-                
+
+
                 try
                 {
-                    
+
                     DateTime now = DateTime.Now;
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
@@ -229,25 +321,30 @@ namespace CCCApp
                         command = new OleDbCommand("SELECT * FROM AddOn WHERE `Staff ID` = '" + strStaffID + "' AND `Months` = " + date3 + " OR `Months` = " + date4 + " ORDER BY Date1 DESC", connection);
 
                     }
-                  
+
                     if (isCSA == false)
                     {
-                        
+
                         if (cbPending.Checked)
                         {
-                             StatusManual = "Pending";
-                            
+                            StatusManual = "Pending";
+
                         }
                         if (cbApproved.Checked)
                         {
-                             StatusManual1  = "Approved";
+                            StatusManual1 = "Approved";
                         }
                         if (cbDeclined.Checked)
                         {
-                             StatusManual2 = "Declined";
+                            StatusManual2 = "Declined";
                         }
 
-                        command = new OleDbCommand("SELECT * FROM AddOn WHERE (`Months` = " + date3 + " OR `Months` = " + date4 + ") AND ( `Status` = '" + StatusManual + "' OR `Status` = '" + StatusManual1 + "' OR `Status` = '" + StatusManual2 + "') ORDER BY Date1 DESC", connection);
+                        if (cbMIS.Checked)
+                        {
+                            MISManual = 0;
+                        }
+
+                        command = new OleDbCommand("SELECT * FROM AddOn WHERE (`Months` = " + date3 + " OR `Months` = " + date4 + ") AND ( `Status` = '" + StatusManual + "' OR `Status` = '" + StatusManual1 + "' OR `Status` = '" + StatusManual2 + "') AND (`MIS` = " + MISManual + ") ORDER BY Date1 DESC", connection);
 
                     }
 
@@ -273,18 +370,19 @@ namespace CCCApp
                         item.SubItems.Add(reader["Reason / Remarks"].ToString());
                         item.SubItems.Add(reader["Approved By"].ToString());
                         item.SubItems.Add(reader["ID"].ToString());
+                        item.SubItems.Add(reader["MIS"].ToString());
 
                         listViewS.Items.Add(item);
 
-                       
+
 
                     }
 
 
-                        listViewS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                        listViewS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listViewS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listViewS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
-                reader.Close();
+                    reader.Close();
 
                 }
                 catch (Exception ex)
@@ -292,13 +390,15 @@ namespace CCCApp
                     Console.WriteLine(ex.Message);
                     //MessageBox.Show("Error" + ex.Message);
                 }
-                
+
                 connection.Close();
 
 
                 StatusManual = string.Empty;
                 StatusManual1 = string.Empty;
                 StatusManual2 = string.Empty;
+                MISManual = 1;
+
 
             }
         }
@@ -307,29 +407,74 @@ namespace CCCApp
         string fTime;
         string tTime;
         string updatedBy;
+        string dates;
+        string datePicker;
+        int countManualAddItem;
 
         private void Submit(object sender, EventArgs e)
         {
 
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
+            if (txtLoginHours.Text != "")
+            {
+                countManualAddItem = countManualAddItem + 1;
+            }
+
+            if (txtNotReady.Text != "")
+            {
+                countManualAddItem = countManualAddItem + 1;
+            }
+
+            if (cbAHT.Checked)
+            {
+                countManualAddItem = countManualAddItem + 1;
+            }
+
+            if (cbDiscount.Checked)
+            {
+                countManualAddItem = countManualAddItem + 1;
+            }
+
+            if (cbInbound.Checked)
+            {
+                countManualAddItem = countManualAddItem + 1;
+            }
+
+            if (countManualAddItem > 1)
+            {
+
+
+                MessageBox.Show("Please select only one item at particular request, you may re-submit should you have more!");
+                countManualAddItem = 0;
+                txtNotReady.Text = "";
+                txtLoginHours.Text = "";
+                cbInbound.Checked = false;
+                cbDiscount.Checked = false;
+                cbAHT.Checked = false;
+                return;
+            }
+
+
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
             {
                 OleDbCommand command;
                 try
                 {
 
                     DateTime now = DateTime.Now;
-       
+
 
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
                     date4 = Convert.ToInt32(dateTimePicker1.Value.Month);
                     DateTime nnow = DateTime.Now;
-                    string dates = Convert.ToString(dateTimePicker1.Value);
+                    dates = Convert.ToString(dateTimePicker1.Value);
+                    datePicker = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+
 
                     string staffID = strStaffID;
 
-                    if (isCSA == false )
+                    if (isCSA == false)
                     {
                         staffID = agentListWFM(txtName.Text);
                         status = "Approved";
@@ -337,7 +482,7 @@ namespace CCCApp
                     }
                     else
                     {
-                        if(agentListWFM(txtName.Text) == staffID)
+                        if (agentListWFM(txtName.Text) == staffID)
                         {
                             status = "Pending";
                             updatedBy = "";
@@ -346,8 +491,8 @@ namespace CCCApp
                         {
                             goto here;
                         }
-                        
-                        
+
+
                     }
 
                     string newDate = dateTimePicker1.Value.ToString("dd/MM/yyyy");
@@ -357,7 +502,7 @@ namespace CCCApp
                     //string toTime = ToH.Text + "." + ToM.Text + " " + TAM.Text;
 
                     //DateTime lll = DateTime.Parse(fromTime, "hh:mm zzz");
-                    fTime =  FromH.Text + ":" + FromM.Text + " " + FAM.Text;
+                    fTime = FromH.Text + ":" + FromM.Text + " " + FAM.Text;
                     tTime = ToH.Text + ":" + ToM.Text + " " + TAM.Text;
 
 
@@ -371,6 +516,7 @@ namespace CCCApp
                     try
                     {
                         loginHours = Convert.ToInt32(txtLoginHours.Text);
+
                     }
                     catch (Exception)
                     {
@@ -389,7 +535,7 @@ namespace CCCApp
                         notReady = 0;
                     }
 
-                    
+
 
                     if (cbAHT.Checked)
                     {
@@ -464,17 +610,28 @@ namespace CCCApp
                     // Staff = Environment.UserName.ToString();
                     // string Staff = "403066";
 
+
+
+
+                    if (loginHours > 49 || notReady > 49)
+                    {
+                        inbound = "1";
+                    }
+
+
                     connection.Open();
 
 
-                    command = new OleDbCommand("INSERT INTO AddOn (`Date1`, `Staff ID`, `Agent Name`, `Not Ready`, `Login Hour`, `AHT`, `DC`, `Inbound`, `Reason / Remarks`, `Approved By`,`Status`, `From`, `To`,`Months`,`MIS`) VALUES" +
-                                                               " ('" + dates + "','" + staffID + "','" + name.Replace("'", "''") + "'," + notReady + "," + loginHours + ",'" + aht + "','" + discount + "','" + inbound + "','" + remarks + "', '" + updatedBy + "' ,'" + status + "' ,'" + fTime + "' ,'" + tTime + "'," + date4 + ",0)", connection);
- 
+                    command = new OleDbCommand("INSERT INTO AddOn (`Date1`, `Date2`, `Staff ID`, `Agent Name`, `Not Ready`, `Login Hour`, `AHT`, `DC`, `Inbound`, `Reason / Remarks`, `Approved By`,`Status`, `From`, `To`,`Months`,`MIS`) VALUES" +
+                                                               " ('" + dates + "', '" + datePicker + "' , '" + staffID + "','" + name.Replace("'", "''") + "'," + notReady + "," + loginHours + ",'" + aht + "','" + discount + "','" + inbound + "','" + remarks + "', '" + updatedBy + "' ,'" + status + "' ,'" + fTime + "' ,'" + tTime + "'," + date4 + ",0)", connection);
+
 
 
                     command.ExecuteNonQuery();
                     connection.Close();
                     // MessageBox.Show("Your manual add is successfully submitted!");
+
+                    CreateMailItem(sender, e);
 
                     txtLoginHours.Text = "";
                     //txtName.Text = null;
@@ -508,7 +665,7 @@ namespace CCCApp
                 {
                     MessageBox.Show("Cannot save due to " + ex.Message.ToString());
                 }
-here:
+                here:
                 connection.Close();
 
             }
@@ -519,7 +676,9 @@ here:
 
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -529,7 +688,9 @@ here:
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    //OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT WFM, `Staff ID` FROM " + MMM + " WHERE(`Staff ID`= " + staffID + ")   ", connection);
+
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -562,13 +723,15 @@ here:
                 return null;
             }
 
-         
+
 
         }
 
         public string agentListWFM(string Name)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -576,11 +739,7 @@ here:
                     date2 = now.Month.ToString();
                     date3 = Convert.ToInt32(date2);
 
-                    
-
-                    //int Staff = Convert.ToInt32(Environment.UserName);
-
-                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM,`" + MMM + "$`.`Staff ID` FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.WFM= '" + Name.Replace("'", "''") + "')", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT WFM,`Staff ID` FROM `" + MMM + "` WHERE(WFM= '" + Name.Replace("'", "''") + "')", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -628,7 +787,7 @@ here:
         //}
 
 
-        OleDbCommand command;
+
         string query;
 
         private void deleteitems(object sender, EventArgs e)
@@ -639,7 +798,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
             {
 
                 {
@@ -666,19 +825,19 @@ here:
 
                             StatusManual = "Pending";
 
-                                StatusManual1 = "Approved";
-                     
-                                StatusManual2 = "Declined";
-                           
+                            StatusManual1 = "Approved";
 
-                             query = "DELETE FROM `AddOn` WHERE ID= " + dt + " AND (Status = '"  + StatusManual + "' OR Status ='" + StatusManual1 + "' OR Status = '" + StatusManual2 + "')";
+                            StatusManual2 = "Declined";
+
+
+                            query = "DELETE FROM `AddOn` WHERE ID= " + dt + " AND (Status = '" + StatusManual + "' OR Status ='" + StatusManual1 + "' OR Status = '" + StatusManual2 + "')";
                         }
                         else
                         {
-                             query = "DELETE FROM `AddOn` WHERE ID= " + dt + " AND Status = 'Pending' ";
+                            query = "DELETE FROM `AddOn` WHERE ID= " + dt + " AND Status = 'Pending' ";
                         }
 
-                        
+
                         using (OleDbCommand command = new OleDbCommand(query, connection))
                         {
                             // consider checking the return value here if the delete command was successful
@@ -686,7 +845,7 @@ here:
                         }
                     }
                 }
-here:
+                here:
                 connection.Close();
                 Check(sender, e);
 
@@ -715,12 +874,12 @@ here:
                 txtDate.Text = listViewS.SelectedItems[0].SubItems[0].Text;
                 txtStatus.Text = listViewS.SelectedItems[0].SubItems[1].Text;
                 txtStaffID.Text = listViewS.SelectedItems[0].SubItems[4].Text;
-                txtNameList.Text= listViewS.SelectedItems[0].SubItems[5].Text;
+                txtNameList.Text = listViewS.SelectedItems[0].SubItems[5].Text;
                 txtLH.Text = listViewS.SelectedItems[0].SubItems[6].Text;
                 txtNRT.Text = listViewS.SelectedItems[0].SubItems[7].Text;
-                txtAHT.Text= listViewS.SelectedItems[0].SubItems[8].Text;
-                txtDC.Text= listViewS.SelectedItems[0].SubItems[9].Text;
-                txtINB.Text= listViewS.SelectedItems[0].SubItems[10].Text;
+                txtAHT.Text = listViewS.SelectedItems[0].SubItems[8].Text;
+                txtDC.Text = listViewS.SelectedItems[0].SubItems[9].Text;
+                txtINB.Text = listViewS.SelectedItems[0].SubItems[10].Text;
                 txtReason.Text = listViewS.SelectedItems[0].SubItems[11].Text;
 
 
@@ -729,12 +888,24 @@ here:
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-  
-                dateTimePicker1.Value = DateTime.Now;
-       
+            if (dateTimePicker1.Value.ToString("dd") == DateTime.Now.Date.ToString("dd"))
+            {
+                dates = DateTime.Now.ToString();
+            }
+            else
+            {
+                dates = Convert.ToString(dateTimePicker1.Value);
+            }
+
+
         }
 
+        private void listViewS_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        int dt;
         private void approve(object sender, EventArgs e)
         {
 
@@ -743,7 +914,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
             {
 
                 {
@@ -755,9 +926,9 @@ here:
                         //MessageBox.Show(index.ToString());
                         string id = listViewS.SelectedItems[0].SubItems[13].Text;
 
-                        
 
-                        int dt = Convert.ToInt32(id);
+
+                        dt = Convert.ToInt32(id);
                         updatedBy = Environment.UserName;
                         string my_querry = "UPDATE AddOn SET Status ='Approved', `Approved By` = '" + updatedBy + "', `Login Hour` = " + Convert.ToInt32(txtLH.Text) + ", `Not Ready` = " + Convert.ToInt32(txtNRT.Text) + ", AHT = '" + txtAHT.Text + "', DC = '" + txtDC.Text + "', Inbound = '" + txtINB.Text + "', `Reason / Remarks` = '" + txtReason.Text + "' WHERE ID = " + dt + "";
 
@@ -768,13 +939,14 @@ here:
                             {
                                 // consider checking the return value here if the delete command was successful
                                 command.ExecuteNonQuery();
-                               
+                                CreateMailItem(sender, e);
+
                             }
                         }
                         catch (Exception)
                         {
 
-                            
+
                         }
                     }
 
@@ -794,7 +966,7 @@ here:
 
             // listViewM.Items.Clear();
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\AddOn.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
             {
 
                 {
@@ -805,7 +977,7 @@ here:
                         // You should also consider using a prepared query...
                         //MessageBox.Show(index.ToString());
                         string id = listViewS.SelectedItems[0].SubItems[13].Text;
-                        int dt = Convert.ToInt32(id);
+                        dt = Convert.ToInt32(id);
                         updatedBy = Environment.UserName;
                         string my_querry = "UPDATE AddOn SET Status ='Declined', `Approved By` = '" + updatedBy + "', `Login Hour` = " + Convert.ToInt32(txtLH.Text) + ", `Not Ready` = " + Convert.ToInt32(txtNRT.Text) + ", AHT = '" + txtAHT.Text + "', DC = '" + txtDC.Text + "', Inbound = '" + txtINB.Text + "', `Reason / Remarks` = '" + txtReason.Text + "' WHERE ID = " + dt + "";
 
@@ -816,7 +988,7 @@ here:
                             {
                                 // consider checking the return value here if the delete command was successful
                                 command.ExecuteNonQuery();
-
+                                CreateMailItem(sender, e);
                             }
                         }
                         catch (Exception)
@@ -834,31 +1006,39 @@ here:
 
         }
 
-        //checkManualAdd();
-        //MessageBox.Show("You will see the new data with your next restart of the application", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        string dateAdjust = DateTime.Now.ToString("dd/MM/yyyy");
 
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    Button t = Application.OpenForms["MainForm"].Controls["btnNotification"] as Button;
-        //    //notf = "Selected Item has just been removed!";
+        private void adjust(object sender, EventArgs e)
+        {
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AddOn.mdb;"))
+            {
 
+                {
 
-        //        if (t.Text == "")
-        //        {
-        //            t.Text = notf;
-        //        }
-        //        else
-        //        {
-        //            t.Text = "";
-        //        }
+                    connection.Open();
 
-        //}
+                    string my_querry = "UPDATE AddOn SET MIS = 1 WHERE Status = 'Approved' AND Date2 <>  '" + dateAdjust + "'";
 
-        //private void txtRemarks_Click(object sender, EventArgs e)
-        //{
-        //    cbOther.Checked = true;
-        //}
+                    try
+                    {
+                        using (command = new OleDbCommand(my_querry, connection))
+                        {
+                            command.ExecuteNonQuery();
+
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                }
+
+                connection.Close();
+                Check(sender, e);
+            }
+        }
 
 
     }

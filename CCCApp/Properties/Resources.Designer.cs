@@ -253,9 +253,29 @@ namespace CCCApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5b212e6bb5386469420801 {
+            get {
+                object obj = ResourceManager.GetObject("5b212e6bb5386469420801", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6_filled_20 {
             get {
                 object obj = ResourceManager.GetObject("6-filled-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6k2 {
+            get {
+                object obj = ResourceManager.GetObject("6k2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -524,6 +544,46 @@ namespace CCCApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap giphy {
+            get {
+                object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy1 {
+            get {
+                object obj = ResourceManager.GetObject("giphy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy11 {
+            get {
+                object obj = ResourceManager.GetObject("giphy11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy2 {
+            get {
+                object obj = ResourceManager.GetObject("giphy2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap goldbar {
             get {
                 object obj = ResourceManager.GetObject("goldbar", resourceCulture);
@@ -607,6 +667,36 @@ namespace CCCApp.Properties {
         internal static System.Drawing.Bitmap list_2_xl {
             get {
                 object obj = ResourceManager.GetObject("list-2-xl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movi0e {
+            get {
+                object obj = ResourceManager.GetObject("movi0e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movi0e1 {
+            get {
+                object obj = ResourceManager.GetObject("movi0e1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap movi2e {
+            get {
+                object obj = ResourceManager.GetObject("movi2e", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -864,6 +954,26 @@ namespace CCCApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SilverMistyIvorygull {
+            get {
+                object obj = ResourceManager.GetObject("SilverMistyIvorygull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sm_full {
+            get {
+                object obj = ResourceManager.GetObject("sm_full", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap spotman {
             get {
                 object obj = ResourceManager.GetObject("spotman", resourceCulture);
@@ -877,6 +987,16 @@ namespace CCCApp.Properties {
         internal static System.Drawing.Bitmap spotman1 {
             get {
                 object obj = ResourceManager.GetObject("spotman1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpryGrotesqueIvorybilledwoodpecker_size_restricted {
+            get {
+                object obj = ResourceManager.GetObject("SpryGrotesqueIvorybilledwoodpecker-size_restricted", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -917,6 +1037,16 @@ namespace CCCApp.Properties {
         internal static System.Drawing.Bitmap trophy_2_20_blue {
             get {
                 object obj = ResourceManager.GetObject("trophy-2-20 blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tumblr_p3qjabk8Xc1qzm8dwo1_400 {
+            get {
+                object obj = ResourceManager.GetObject("tumblr_p3qjabk8Xc1qzm8dwo1_400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,9 +17,19 @@ namespace CCCApp
 {
     public partial class branchcodes : UserControl
     {
+        string ConnString;
         public branchcodes()
         {
             InitializeComponent();
+
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
         }
         OleDbCommand command;
         private void searchingData_KeyPress(object sender, EventArgs e)
@@ -36,7 +46,7 @@ namespace CCCApp
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=BranchCodes.mdb;"))
                 //B720w246
                 //Provider = Microsoft.ACE.OLEDB.12.0; Password = ""; User ID = Admin; Data Source = D:\BTCX\BTCX.mdb; Mode = Share Deny Write; Extended Properties = ""; Jet OLEDB:System database = ""; Jet OLEDB:Registry Path = ""; Jet OLEDB:Database Password = ""; Jet OLEDB:Engine Type = 5; Jet OLEDB:Database Locking Mode = 0; Jet OLEDB:Global Partial Bulk Ops = 2; Jet OLEDB:Global Bulk Transactions = 1; Jet OLEDB:New Database Password = ""; Jet OLEDB:Create System Database = False; Jet OLEDB:Encrypt Database = False; Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;Jet OLEDB:Limited DB Caching=False;Jet OLEDB:Bypass ChoiceField Validation=False
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BRANCHCODE.mdb;"))
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "BRANCHCODE.mdb;"))
                 {
                     try
                     {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace CCCApp
 {
@@ -15,6 +16,115 @@ namespace CCCApp
         public systemLink()
         {
             InitializeComponent();
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
+
+            if(Environment.UserName.ToString()=="Yusri"|| Environment.UserName.ToString() == "179264")
+            {
+                tbMIS.Visible = true;
+                radioButton1.Visible = true;
+                radioButton2.Visible = true;
+            }
+        }
+        string ConnString;
+        OleDbCommand command;
+        int stat;
+
+        public void systemTermination(object sender, EventArgs e)
+        {
+           
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Terminator.mdb;"))
+
+            {
+                try
+                {
+
+                    if(radioButton1.Checked == true)
+                    {
+                        radioButton2.Checked = false;
+                        stat = 1;
+                    }
+                    else if(radioButton2.Checked == true)
+                    {
+                        radioButton1.Checked = false;
+                        stat = 0;
+                    }
+
+
+                    OleDbCommand command = new OleDbCommand("UPDATE  System SET STATUS = " + stat + ", MESSAGE = '" + tbMIS.Text + "' ", connection);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("Error" + ex.Message);
+                    Console.WriteLine(ex.Message);
+                }
+
+                connection.Close();
+
+               
+            }
+        }
+
+
+        public void readTermination()
+        {
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Terminator.mdb;"))
+
+            {
+                try
+                {
+
+
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM System", connection);
+                    connection.Open();
+                    OleDbDataReader reader = command.ExecuteReader();
+                    //`Staff ID` = '" + Staff + "'
+
+                    while (reader.Read())
+                    {
+      
+                        if (reader["STATUS"].ToString()== "0")
+                        {
+
+                            reader.Close();
+                            connection.Close();
+                            goto here;
+                        }
+                        else
+                        {
+
+                            MessageBox.Show(reader["MESSAGE"].ToString());
+                            reader.Close();
+                            connection.Close();
+                            Application.Exit();
+  
+                        }
+
+
+                    }
+
+
+                       
+
+                }
+                catch (Exception e)
+                {
+
+                }
+
+  here:
+                connection.Close();
+            }
         }
 
         private void italicWord(object sender, EventArgs e)

@@ -73,6 +73,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSearchHere = new System.Windows.Forms.Label();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtLegalID = new System.Windows.Forms.TextBox();
@@ -80,7 +81,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblSearchHere = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -585,9 +585,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
+            // lblSearchHere
+            // 
+            this.lblSearchHere.BackColor = System.Drawing.Color.Transparent;
+            this.lblSearchHere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchHere.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblSearchHere.Location = new System.Drawing.Point(91, 22);
+            this.lblSearchHere.Name = "lblSearchHere";
+            this.lblSearchHere.Size = new System.Drawing.Size(210, 23);
+            this.lblSearchHere.TabIndex = 6;
+            this.lblSearchHere.Text = "begin the searching here!";
+            this.lblSearchHere.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSearchHere.Click += new System.EventHandler(this.setToInvisible);
+            // 
             // txtCardNo
             // 
             this.txtCardNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCardNo.Enabled = false;
             this.txtCardNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardNo.Location = new System.Drawing.Point(89, 85);
             this.txtCardNo.Name = "txtCardNo";
@@ -597,6 +611,7 @@
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(89, 53);
             this.txtName.Name = "txtName";
@@ -648,23 +663,9 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblSearchHere
-            // 
-            this.lblSearchHere.BackColor = System.Drawing.Color.Transparent;
-            this.lblSearchHere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchHere.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblSearchHere.Location = new System.Drawing.Point(91, 22);
-            this.lblSearchHere.Name = "lblSearchHere";
-            this.lblSearchHere.Size = new System.Drawing.Size(210, 23);
-            this.lblSearchHere.TabIndex = 6;
-            this.lblSearchHere.Text = "begin the searching here!";
-            this.lblSearchHere.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSearchHere.Click += new System.EventHandler(this.setToInvisible);
-            // 
             // crosssell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lineCriteria);

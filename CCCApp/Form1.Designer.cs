@@ -269,6 +269,7 @@
             // 
             // label3
             // 
+            this.label3.AutoEllipsis = true;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(112, 47);
@@ -279,6 +280,7 @@
             // 
             // label2
             // 
+            this.label2.AutoEllipsis = true;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(112, 36);
@@ -289,6 +291,7 @@
             // 
             // label1
             // 
+            this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(112, 25);
@@ -314,7 +317,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label4.Location = new System.Drawing.Point(211, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 21);
+            this.label4.Size = new System.Drawing.Size(194, 21);
             this.label4.TabIndex = 19;
             this.label4.Text = "TOGETHER WE PROGRESS";
             // 
@@ -480,7 +483,8 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 1000;
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 30000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // survey1
@@ -494,11 +498,9 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(940, 540);
-            this.Controls.Add(this.survey1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox4);
@@ -515,6 +517,7 @@
             this.Controls.Add(this.calculator1);
             this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.systemLink1);
+            this.Controls.Add(this.survey1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -569,9 +572,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private systemLink systemLink1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btnSurvey;
         private survey survey1;
+        public System.Windows.Forms.Timer timer2;
     }
 }
 

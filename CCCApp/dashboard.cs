@@ -25,7 +25,7 @@ namespace CCCApp
         Label[] lblUH = new Label[3];
         Button[] btnUH = new Button[3];
         Label[] lblScoreUH = new Label[3];
-
+        string ConnString;
         int intStaffID;
         string StaffID;
 
@@ -48,13 +48,23 @@ namespace CCCApp
             }
             else
             {
-                intStaffID = 194446;
-                StaffID = "194446";
+                intStaffID = 450011;
+                StaffID = "450011";
             }
         }
         public dashboard()
         {
             InitializeComponent();
+
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
+
 
             setDate();
 
@@ -158,11 +168,14 @@ namespace CCCApp
 
         }
 
-        private void pressEnter()
+        public void pressEnter()
         {
 
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
+
+
             {
                 try
                 {
@@ -311,9 +324,11 @@ namespace CCCApp
 
         int o;
 
-        private void pressEnter1()
+        public void pressEnter1()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
+
             {
                 try
                 {
@@ -418,9 +433,18 @@ namespace CCCApp
             pressEnter1();
         }
 
+        public void updateScore(object sender, MouseEventArgs e)
+        {
+
+            pressEnter();
+            pressEnter1();
+        }
+
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -430,7 +454,10 @@ namespace CCCApp
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    //OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT WFM FROM " + MMM + " WHERE(`Staff ID`= " + staffID + ")   ", connection);
+
+
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -466,6 +493,12 @@ namespace CCCApp
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            pressEnter();
+            pressEnter1();
+        }
+
+        private void dashboard_Layout(object sender, LayoutEventArgs e)
         {
             pressEnter();
             pressEnter1();

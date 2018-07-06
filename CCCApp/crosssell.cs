@@ -28,6 +28,7 @@ namespace CCCApp
         int pointUH;
         int intStaffID;
         string MMM;
+        string ConnString;
 
         void checkingID()
         {
@@ -65,6 +66,16 @@ namespace CCCApp
         public crosssell()
         {
             InitializeComponent();
+
+
+            if (Environment.UserName.ToString() != "Yusri")
+            {
+                ConnString = "\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\";
+            }
+            else
+            {
+                ConnString = "";
+            }
             checkingID();
             picRHB.BackgroundImage = null;
             picESTMT.BackgroundImage = null;
@@ -277,7 +288,9 @@ namespace CCCApp
 
         public string agentList(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -287,7 +300,8 @@ namespace CCCApp
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    //OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT WFM FROM " + MMM + " WHERE(`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -312,7 +326,7 @@ namespace CCCApp
                 catch (Exception ex)
                 {
                     //MessageBox.Show("Error" + ex.Message);
-                    Console.WriteLine(ex.Message);
+                   // Console.WriteLine(ex.Message);
                 }
 
                 connection.Close();
@@ -493,10 +507,10 @@ namespace CCCApp
 
 
         double balance;
-
+        string staffName,UH,TM;
         private void insertDataMDB()
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCXData.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "BTCXData.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
 
@@ -505,7 +519,8 @@ namespace CCCApp
                     connection.Open();
 
 
-
+                   
+                    
 
                     if (done != txtLegalID.Text || carddone != txtCardNo.Text || cbBTNo.Checked == true || cbBTYes.Checked == true || cbCXNo.Checked == true || cbCXYes.Checked == true)
                     {
@@ -534,8 +549,23 @@ namespace CCCApp
                             insertDataCSA();
                         }
 
+                        try
+                        {
+                           
 
-                        String my_querry = "INSERT INTO XSell (CUSTOMER, LEGAL_ID, CARD_NO, STAFF_ID, DATE1, PRODUCT, INTEREST, REMARKS, SOURCE, RHBNOW, ESTATEMENT, BALANCE, STATUS )VALUES('" + txtName.Text.Replace("'", "''") + "','" + legalID + "','" + txtCardNo.Text + "','" + StaffID + "' ,'" + date1 + "','" + product + "','" + interested + "','" + txtCriteriaRemarks.Text + "','" + source + "','" + rhb + "','" + estate + "','" + balance + "','" + status + "')";
+
+                            staffName = agentList(intStaffID);
+                            TM = agentListTM(intStaffID);
+                            UH = agentListUH(intStaffID);
+
+                        }
+                        catch (Exception)
+                        {
+                            staffName = "Yusri Saad";
+                        }
+
+
+                        String my_querry = "INSERT INTO XSell (CUSTOMER, LEGAL_ID, CARD_NO, STAFF_ID, STAFF_NAME, DATE1, PRODUCT, INTEREST, REMARKS, SOURCE, RHBNOW, ESTATEMENT, BALANCE, STATUS, TM, UH )VALUES('" + txtName.Text.Replace("'", "''") + "','" + legalID + "','" + txtCardNo.Text + "','" + StaffID + "' ,'" + staffName + "', '" + date1 + "','" + product + "','" + interested + "','" + txtCriteriaRemarks.Text + "','" + source + "','" + rhb + "','" + estate + "','" + balance + "','" + status + "','" + TM + "','" + UH + "')";
 
                         OleDbCommand cmd = new OleDbCommand(my_querry, connection);
                         cmd.ExecuteNonQuery();
@@ -561,7 +591,7 @@ namespace CCCApp
         private void insertDataCSA()
         {
 
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
 
                 try
                 {
@@ -627,7 +657,7 @@ namespace CCCApp
                 }
 
             here:
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\CSA.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "CSA.mdb;"))
 
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\B720W999\\BTCX\\BTCXData.mdb;"))
 
@@ -707,7 +737,9 @@ namespace CCCApp
 
         public string agentListTM(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -717,7 +749,8 @@ namespace CCCApp
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT * FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    //OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM " + MMM + " WHERE(`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -753,7 +786,9 @@ namespace CCCApp
 
         public string agentListUH(int staffID)
         {
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;Mode=Read;\""))
+            //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "Agent List.xls;Extended Properties=\"Excel 8.0;HDR=YES;;\""))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "AgentList.mdb;"))
+
             {
                 try
                 {
@@ -763,7 +798,8 @@ namespace CCCApp
 
                     //int Staff = Convert.ToInt32(Environment.UserName);
 
-                    OleDbCommand command = new OleDbCommand("SELECT * FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    //OleDbCommand command = new OleDbCommand("SELECT `" + MMM + "$`.WFM FROM `" + MMM + "$` `" + MMM + "$` WHERE(`" + MMM + "$`.`Staff ID`= " + staffID + ")   ", connection);
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM " + MMM + " WHERE(`Staff ID`= " + staffID + ")   ", connection);
                     connection.Open();
                     OleDbDataReader reader = command.ExecuteReader();
                     //`Staff ID` = '" + Staff + "'
@@ -832,7 +868,7 @@ namespace CCCApp
                 picRHB.BackgroundImage = null;
                 picESTMT.BackgroundImage = null;
 
-                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCX.mdb;"))
+                using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "BTCX.mdb;"))
                 //B720w246
                 //Provider = Microsoft.ACE.OLEDB.12.0; Password = ""; User ID = Admin; Data Source = D:\BTCX\BTCX.mdb; Mode = Share Deny Write; Extended Properties = ""; Jet OLEDB:System database = ""; Jet OLEDB:Registry Path = ""; Jet OLEDB:Database Password = ""; Jet OLEDB:Engine Type = 5; Jet OLEDB:Database Locking Mode = 0; Jet OLEDB:Global Partial Bulk Ops = 2; Jet OLEDB:Global Bulk Transactions = 1; Jet OLEDB:New Database Password = ""; Jet OLEDB:Create System Database = False; Jet OLEDB:Encrypt Database = False; Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=False;Jet OLEDB:Bypass UserInfo Validation=False;Jet OLEDB:Limited DB Caching=False;Jet OLEDB:Bypass ChoiceField Validation=False
                 //using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Yusri\\Desktop\\repo\\CCCApp21\\CCCApp\\CCCApp\\bin\\Debug\\XSell.xlsx;Extended Properties = \"Excel 12.0 Xml; HDR = YES; \""))
@@ -899,7 +935,7 @@ namespace CCCApp
 
                         //insert customer in the database
 
-                        //int staffID = 450011;
+                       
                         string staffID1 = agentList(intStaffID);
                         if (staffID1 != null)
                         {
@@ -962,7 +998,7 @@ namespace CCCApp
         public string checkDouble(string legalID)
         {
             int i = 0;
-            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=\\\\maanetapp1\\Consumer Product\\CCCKL\\Malaysia Operations\\For Internal Use Only\\MIS Unit\\Yusri's File\\BTCX\\BTCXData.mdb;"))
+            using (OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + ConnString + "BTCXData.mdb;"))
             {
                 try
                 {
